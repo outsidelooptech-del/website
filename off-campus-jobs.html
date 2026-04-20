@@ -198,18 +198,15 @@ nav a {
 
 <nav>
 <h1 style="display:flex;align-items:center;gap:10px;">
-<img src="logo.png" alt="Off Camp " style="height:36px;width:36px;border-radius:8px;">
+<img src="logo.png" alt="Off Camp Logo" style="height:36px;width:36px;border-radius:8px;">
 <span>Off Camp</span>
 </h1>
 
-<div>
 <a href="/off-campus-jobs.html">Jobs</a>
 <a href="/internships-for-freshers.html">Internships</a>
 <a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
 <a href="/interview-preparation-questions.html">AI Based Interview Prep</a>
-<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;margin-left:18px;">Get the App</button>
-</div>
-
+<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;">Get the App</button>
 </nav>
 
 <!-- Hero -->
@@ -313,19 +310,21 @@ Discover data analyst and business analyst jobs for freshers.
 
 <div class="features">
 
+<div class="features">
+
 <h2 class="section-title">
-Why Use Off Camp?
+Why Students Choose Off Camp
 </h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>
-Verified Jobs
+Verified Job Listings
 </h3>
 
 <p>
-All job listings are manually verified to ensure genuine opportunities.
+Every job is checked before publishing so you avoid fake or expired openings.
 </p>
 
 </div>
@@ -333,11 +332,11 @@ All job listings are manually verified to ensure genuine opportunities.
 <div class="card">
 
 <h3>
-Fresher Focused
+Daily Updates
 </h3>
 
 <p>
-Designed specifically for freshers, students, and entry level job seekers.
+New off-campus jobs and internships are added every day to keep you ahead of other candidates.
 </p>
 
 </div>
@@ -345,12 +344,14 @@ Designed specifically for freshers, students, and entry level job seekers.
 <div class="card">
 
 <h3>
-Apply Directly
+Apply Faster with App
 </h3>
 
 <p>
-Apply directly on official company career pages with trusted links.
+Get instant notifications and apply quickly using the Off Camp mobile app.
 </p>
+
+</div>
 
 </div>
 
@@ -362,45 +363,44 @@ Apply directly on official company career pages with trusted links.
 
 <div class="features" style="margin-top:60px;">
 
+<div class="features" style="margin-top:70px;text-align:center;">
+
 <h2 class="section-title">
-Get Jobs Faster on Our Android App
+Download the Off Camp App
 </h2>
 
-<div class="cards" style="align-items:center;">
-
-<div class="card">
-<h3>
-Download the Off Camp App
-</h3>
-
-<p>
-Scan the QR code to download our Android app and get daily job updates, internships, and interview preparation resources directly on your phone.
+<p style="max-width:650px;margin:15px auto 30px;color:#cbd5f5;">
+Scan the QR code to get instant job alerts, internships, and fresher hiring updates directly on your phone.
 </p>
 
-<br>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:40px;align-items:center;">
 
-<!-- Replace this image with your real QR code -->
+<div class="card" style="text-align:center;max-width:260px;">
 
-<img src="QR.png" alt="Download Off Camp App QR Code" style="width:180px;border-radius:12px;">
+<img src="QR.png" alt="Download Off Camp App QR Code" style="width:170px;border-radius:14px;">
+
+<p style="margin-top:10px;font-size:13px;color:#9ca3af;">
+Scan to download the app
+</p>
 
 </div>
 
-<div class="card">
+<div class="card" style="text-align:center;max-width:260px;">
 
-<h3>
-App Preview
-</h3>
+<img src="Frame 3.png" alt="Off Camp App Screenshot" style="width:210px;border-radius:18px;">
 
-<p>
-Explore verified off campus jobs, internships, and fresher opportunities from multiple companies in one place.
+<p style="margin-top:10px;font-size:13px;color:#9ca3af;">
+Latest jobs in one place
 </p>
 
-<br>
+</div>
 
-<!-- Replace with your real app screenshot -->
+</div>
 
-<img src="Frame 3.png" alt="Off Camp App Screenshot" style="width:220px;border-radius:12px;">
-
+<div style="margin-top:30px;">
+<button id="openModal" style="padding:14px 28px;border:none;border-radius:12px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;font-size:16px;">
+Get the App
+</button>
 </div>
 
 </div>
@@ -418,25 +418,4 @@ Explore verified off campus jobs, internships, and fresher opportunities from mu
 </div>
 
 </body>
-    <script>
-
-const modal = document.getElementById('appModal');
-const openBtn = document.getElementById('openModal');
-const closeBtn = document.getElementById('closeModal');
-
-openBtn.onclick = function() {
-    modal.style.display = 'flex';
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-
-</script>
 </html>
