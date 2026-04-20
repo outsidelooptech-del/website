@@ -1,41 +1,62 @@
-<!-- ===================================================== -->
-<!-- PAGE 1: off-campus-jobs.html -->
-<!-- ===================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Off Campus Jobs for Freshers in India | Verified Jobs from 50+ Companies</title>
-<meta name="description" content="Explore verified off campus jobs for freshers in India. Find entry-level jobs from 50+ companies and apply directly on company career pages.">
-<meta name="keywords" content="off campus jobs, fresher jobs, entry level jobs, jobs for freshers in India, graduate jobs">
-<link rel="canonical" href="https://offcamp.online/off-campus-jobs.html">
+<!-- SEO Title -->
+<title>Off Campus Jobs for Freshers | Explore Jobs from 50+ Companies | Offcamp</title>
+
+<!-- SEO Meta -->
+<meta name="description" content="Find verified off campus jobs for freshers, internships, and entry level jobs across India. Explore jobs from 50+ companies at one place.">
+<meta name="keywords" content="off campus jobs for freshers, fresher jobs India, internships for students, entry level jobs, software developer jobs, data analyst jobs">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #1a0933, #05010a);
+}
+
+body {
+    background: linear-gradient(180deg, #020617, #020617, #020617);
     color: white;
 }
 
-nav {
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Navbar */
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px;
-    background: rgba(0,0,0,0.4);
-    position: sticky;
-    top: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 18px;
-    font-weight: 500;
+.logo {
+    font-size: 22px;
+    font-weight: 700;
 }
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Hero */
 
 .hero {
     text-align: center;
@@ -43,101 +64,353 @@ nav a {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    max-width: 750px;
+    color: #cbd5f5;
+    max-width: 700px;
     margin: auto;
-    color: #cfcfe8;
+    margin-bottom: 30px;
 }
 
-.hero img {
-    margin-top: 30px;
-    width: 320px;
-    max-width: 90%;
-    border-radius: 22px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+.btn {
+    padding: 14px 26px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.section {
-    padding: 60px 20px;
+.primary {
+    background: #6366f1;
+    color: white;
 }
 
-.section h2 {
+.secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+/* Stats */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Search */
+
+.search {
+    margin-top: 40px;
     text-align: center;
 }
 
-.card-grid {
+.search input {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* Categories */
+
+.section-title {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    max-width: 1100px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
 }
 
 .card {
-    background: rgba(255,255,255,0.08);
-    padding: 24px;
-    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 16px;
+    transition: 0.3s;
 }
 
-footer {
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #cbd5f5;
+    font-size: 14px;
+}
+
+/* Features */
+
+.features {
+    background: rgba(255,255,255,0.05);
+    margin-top: 70px;
+    padding: 50px 20px;
+}
+
+/* Footer */
+
+.footer {
     text-align: center;
-    padding: 18px;
-    color: #aaa;
+    margin-top: 60px;
+    padding: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #9ca3af;
+    font-size: 14px;
 }
-</style>
-</head>
 
+</style>
+
+</head>
 <body>
 
-<nav>
-<div style="font-weight:600;font-size:20px;">Off Camp</div>
-<div>
-<a href="/">Home</a>
-<a href="/internships-for-freshers.html">Internships</a>
-<a href="/resume-builder-for-freshers.html">Resume Builder</a>
-<a href="/interview-preparation-questions.html">Interview Prep</a>
+<div class="container">
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<div class="logo">
+Off Camp
 </div>
-</nav>
+
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/internships.html">Internships</a>
+<a href="/resume-builder.html">Resume Builder</a>
+<a href="/interview-prep.html">Interview Prep</a>
+</div>
+
+</div>
+
+<!-- Hero -->
 
 <div class="hero">
-<h1>Explore Jobs from 50+ Companies at One Place</h1>
+
+<h1>
+Explore Jobs from 50+ Companies at One Place
+</h1>
 
 <p>
-Find verified off campus jobs for freshers across India. Search entry-level jobs from top companies and apply directly on official career pages.
+Find verified off campus jobs for freshers across India. Search entry level jobs from top companies and apply directly on official career pages.
 </p>
 
-<img src="jobs-banner.png" alt="Explore verified off campus jobs for freshers from multiple companies">
+<button class="btn primary">
+Explore Jobs
+</button>
+
+<button class="btn secondary">
+Download App
+</button>
+
+<!-- Stats -->
+
+<div class="stats">
+
+<div class="stat-box">
+50+ Companies Hiring
 </div>
 
-<div class="section">
-<h2>Latest Off Campus Jobs for Freshers</h2>
+<div class="stat-box">
+1000+ Jobs Available
+</div>
 
-<div class="card-grid">
+<div class="stat-box">
+Daily Job Updates
+</div>
+
+<div class="stat-box">
+Verified Listings
+</div>
+
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="search">
+
+<input type="text" placeholder="Search jobs, companies, roles...">
+
+</div>
+
+<!-- Categories -->
+
+<h2 class="section-title">
+Latest Off Campus Jobs for Freshers
+</h2>
+
+<div class="cards">
 
 <div class="card">
-<h3>Software Developer Jobs</h3>
-<p>Find fresher jobs in software development, web development, and mobile app development.</p>
+<h3>
+Software Developer Jobs
+</h3>
+
+<p>
+Find fresher jobs in software development, web development, and mobile app development.
+</p>
+
 </div>
 
 <div class="card">
-<h3>Customer Support Jobs</h3>
-<p>Explore entry-level customer support and service roles for graduates.</p>
+
+<h3>
+Customer Support Jobs
+</h3>
+
+<p>
+Explore entry level customer support and service roles for graduates.
+</p>
+
 </div>
 
 <div class="card">
-<h3>Data Analyst Jobs</h3>
-<p>Discover data analyst and business analyst jobs for freshers.</p>
+
+<h3>
+Data Analyst Jobs
+</h3>
+
+<p>
+Discover data analyst and business analyst jobs for freshers.
+</p>
+
 </div>
 
 </div>
+
+<!-- Features -->
+
+<div class="features">
+
+<h2 class="section-title">
+Why Use Off Camp?
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>
+Verified Jobs
+</h3>
+
+<p>
+All job listings are manually verified to ensure genuine opportunities.
+</p>
+
 </div>
 
-<footer>
+<div class="card">
+
+<h3>
+Fresher Focused
+</h3>
+
+<p>
+Designed specifically for freshers, students, and entry level job seekers.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Apply Directly
+</h3>
+
+<p>
+Apply directly on official company career pages with trusted links.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Download App Section -->
+
+<div class="features" style="margin-top:60px;">
+
+<h2 class="section-title">
+Get Jobs Faster on Our Android App
+</h2>
+
+<div class="cards" style="align-items:center;">
+
+<div class="card">
+<h3>
+Download the Off Camp App
+</h3>
+
+<p>
+Scan the QR code to download our Android app and get daily job updates, internships, and interview preparation resources directly on your phone.
+</p>
+
+<br>
+
+<!-- Replace this image with your real QR code -->
+
+<img src="images/QR.png" alt="Download Off Camp App QR Code" style="width:180px;border-radius:12px;">
+<p style="margin-top:10px;font-size:14px;">Or search <b>Off Camp: Job Search App</b> on Play Store</p>
+</div>
+
+<div class="card">
+
+<h3>
+App Preview
+</h3>
+
+<p>
+Explore verified off campus jobs, internships, and fresher opportunities from multiple companies in one place.
+</p>
+
+<br>
+
+<!-- Replace with your real app screenshot -->
+
+<img src="images/Frame 3.png" alt="Off Camp App Screenshot" style="width:220px;border-radius:12px;">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+
 © 2026 Off Camp. All rights reserved.
-</footer>
+
+</div>
+
+</div>
 
 </body>
 </html>
