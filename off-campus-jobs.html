@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Off Campus Jobs for Freshers | 50+ Companies Hiring</title>
+<title>Off Campus Jobs 2026 for Freshers | Software, Data Analyst Jobs India</title>
 
-<meta name="description" content="Find latest off campus jobs for freshers across India. Apply to verified jobs from top companies.">
-
+<meta name="description" content="Latest off campus jobs for freshers 2024, 2025, 2026 batch. Apply to software engineer, data analyst, and IT jobs across India from top companies like Microsoft, Google, EY.">
+<meta name="keywords" content="off campus jobs 2026, fresher jobs India, software engineer jobs for freshers, data analyst jobs India, IT jobs for freshers, jobs for 2024 2025 2026 batch, entry level jobs India">
+ <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "Off Camp",
+ "url": "https://offcamp.online"
+}
+</script>   
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -84,6 +92,7 @@ nav h1 {
     transition: 0.3s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .job-card:hover {
@@ -156,11 +165,16 @@ nav h1 {
 
 <!-- NAV -->
 <nav>
-<h1>🚀 Off Camp</h1>
+<h1 style="display:flex;align-items:center;gap:10px;">
+<img src="logo.png" style="height:32px;width:32px;border-radius:8px;">
+Off Camp
+</h1>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+</p>
+    
 <h1>Find Your Dream Job</h1>
 <p>Explore latest off campus jobs for freshers across India</p>
 
@@ -212,7 +226,9 @@ function renderJobs(jobs) {
         <div class="job-card">
 
             <div class="job-header">
-                <img src="${job['Image URL']}" alt="logo">
+                <img src="${job['Image URL'] || job['ImageURL'] || job.image || 'logo.png'}" 
+     onerror="this.src='logo.png'" 
+     alt="company logo">
                 <div class="job-title">${job['Job Title']}</div>
             </div>
 
