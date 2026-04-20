@@ -4,18 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO Title -->
-<title>Off Campus Jobs for Freshers | Explore Jobs from 50+ Companies | Offcamp</title>
+<title>Off Campus Jobs for Freshers | 50+ Companies Hiring</title>
 
-<!-- SEO Meta -->
-<meta name="description" content="Find verified off campus jobs for freshers, internships, and entry level jobs across India. Explore jobs from 50+ companies at one place.">
-<meta name="keywords" content="off campus jobs for freshers, fresher jobs India, internships for students, entry level jobs, software developer jobs, data analyst jobs">
+<meta name="description" content="Find latest off campus jobs for freshers across India. Apply to verified jobs from top companies.">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -24,298 +19,235 @@
 }
 
 body {
-    background: linear-gradient(180deg, #020617, #020617, #020617);
+    background: linear-gradient(180deg, #020617, #020617);
     color: white;
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Navigation */
-
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    background: rgba(0,0,0,0.3);
+    padding: 18px 30px;
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
+    background: rgba(0,0,0,0.3);
 }
 
 nav h1 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 18px;
-}
-
-/* Hero */
-
+/* HERO */
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px;
 }
 
 .hero h1 {
-    font-size: 44px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 .hero p {
     color: #cbd5f5;
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
 }
 
-.btn {
-    padding: 14px 26px;
-    border-radius: 12px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    margin: 5px;
+/* SEARCH */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.primary {
-    background: #6366f1;
-    color: white;
-}
-
-.secondary {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-}
-
-/* Stats */
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.stat-box {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 14px;
-    text-align: center;
-    font-weight: 600;
-}
-
-/* Search */
-
-.search {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.search input {
-    width: 100%;
+.search-box input {
+    width: 90%;
     max-width: 500px;
     padding: 14px;
     border-radius: 12px;
     border: none;
 }
 
-/* Categories */
-
-.section-title {
-    text-align: center;
-    margin-top: 70px;
-    font-size: 26px;
-    font-weight: 600;
-}
-
-.cards {
+/* JOB GRID */
+.job-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
-    margin-top: 35px;
+    padding: 30px;
 }
 
-.card {
-    background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 16px;
+/* JOB CARD */
+.job-card {
+    background: linear-gradient(135deg, #7b5cff, #a855f7);
+    border-radius: 18px;
+    padding: 18px;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover {
+.job-card:hover {
     transform: translateY(-6px);
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.job-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.card p {
-    color: #cbd5f5;
-    font-size: 14px;
+.job-header img {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
 }
 
-/* Features */
-
-.features {
-    background: rgba(255,255,255,0.05);
-    margin-top: 70px;
-    padding: 50px 20px;
+.job-title {
+    font-size: 15px;
+    font-weight: 600;
 }
 
-/* Footer */
+.tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
 
-.footer {
+.tag {
+    background: rgba(255,255,255,0.9);
+    color: black;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.job-footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.apply-btn {
+    display: block;
+    margin-top: 12px;
     text-align: center;
-    margin-top: 60px;
-    padding: 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #9ca3af;
-    font-size: 14px;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
+/* RESPONSIVE */
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+}
 </style>
-
 </head>
+
 <body>
 
-<div class="container">
-
-<!-- Navigation -->
-
+<!-- NAV -->
 <nav>
-<h1 style="display:flex;align-items:center;gap:10px;">
-<img src="logo.png" alt="Off Camp Logo" style="height:36px;width:36px;border-radius:8px;">
-<span>Off Camp</span>
-</h1>
-
-<a href="/off-campus-jobs.html">Jobs</a>
-<a href="/internships-for-freshers.html">Internships</a>
-<a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
-<a href="/interview-preparation-questions.html">AI Based Interview Prep</a>
-<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;">Get the App</button>
+<h1>🚀 Off Camp</h1>
 </nav>
 
-<!-- Hero -->
-
+<!-- HERO -->
 <div class="hero">
+<h1>Find Your Dream Job</h1>
+<p>Explore latest off campus jobs for freshers across India</p>
 
-<h1>
-Explore Jobs from 50+ Companies at One Place
-</h1>
-
-<p>
-Find verified off campus jobs for freshers across India. Search entry level jobs from top companies and apply directly on official career pages.
-</p>
-
-<button class="btn primary">
-Explore Jobs
-</button>
-
-<button class="btn secondary">
-Download App
-</button>
-
-<!-- Stats -->
-
-<div class="stats">
-
-<div class="stat-box">
-50+ Companies Hiring
+<div class="search-box">
+<input type="text" id="search" placeholder="Search jobs, companies...">
+</div>
 </div>
 
-<div class="stat-box">
-1000+ Jobs Available
-</div>
+<!-- JOB LIST -->
+<div id="jobs" class="job-grid"></div>
 
-<div class="stat-box">
-Daily Job Updates
-</div>
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
-<div class="stat-box">
-Verified Listings
-</div>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBRh1F8VBXApvMD_Es82_lW6-JYxbhAh50",
+  authDomain: "off-camp-61317.firebaseapp.com",
+  databaseURL: "https://off-camp-61317-default-rtdb.firebaseio.com",
+  projectId: "off-camp-61317",
+  storageBucket: "off-camp-61317.firebasestorage.app",
+  messagingSenderId: "196425828236",
+  appId: "1:196425828236:web:efc275143e7dbd673338a9",
+  measurementId: "G-377FWQMFZR"
+};
 
-</div>
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
-</div>
+const container = document.getElementById("jobs");
+const searchInput = document.getElementById("search");
 
-<!-- Search -->
+let allJobs = [];
 
-<div class="search">
+db.ref("mydatabases/btech/jobs").on("value", snapshot => {
+    allJobs = [];
+    snapshot.forEach(child => {
+        allJobs.push(child.val());
+    });
+    renderJobs(allJobs);
+});
 
-<input type="text" placeholder="Search jobs, companies, roles...">
+function renderJobs(jobs) {
+    container.innerHTML = "";
 
-</div>
+    jobs.forEach(job => {
+        const card = `
+        <div class="job-card">
 
-<!-- Categories -->
+            <div class="job-header">
+                <img src="${job['Image URL']}" alt="logo">
+                <div class="job-title">${job['Job Title']}</div>
+            </div>
 
-<h2 class="section-title">
-Latest Off Campus Jobs for Freshers
-</h2>
+            <div class="tags">
+                <span class="tag">📍 ${job.Location}</span>
+                <span class="tag">🎯 ${job.Experience}</span>
+            </div>
 
-<div class="cards">
+            <div class="job-footer">
+                <span>💼 Fulltime</span>
+                <span>💰 ${job.Salary}</span>
+            </div>
 
-<div class="card">
-<h3>
-Software Developer Jobs
-</h3>
+            <a href="${job['Apply Link']}" target="_blank" class="apply-btn">
+                Apply Now
+            </a>
 
-<p>
-Find fresher jobs in software development, web development, and mobile app development.
-</p>
+        </div>
+        `;
+        container.innerHTML += card;
+    });
+}
 
-</div>
+/* SEARCH */
+searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
 
-<div class="card">
+    const filtered = allJobs.filter(job =>
+        job['Job Title'].toLowerCase().includes(value) ||
+        job['Company Name'].toLowerCase().includes(value)
+    );
 
-<h3>
-Customer Support Jobs
-</h3>
-
-<p>
-Explore entry level customer support and service roles for graduates.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Data Analyst Jobs
-</h3>
-
-<p>
-Discover data analyst and business analyst jobs for freshers.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- Footer -->
-
-<div class="footer">
-
-© 2026 Off Camp. All rights reserved.
-
-</div>
-
-</div>
+    renderJobs(filtered);
+});
+</script>
 
 </body>
 </html>
