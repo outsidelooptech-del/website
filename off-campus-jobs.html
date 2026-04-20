@@ -34,26 +34,30 @@ body {
     padding: 20px;
 }
 
-/* Navbar */
+/* Navigation */
 
-.navbar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 18px 40px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
 }
 
-.logo {
+nav h1 {
+    margin: 0;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-.nav-links a {
-    margin-left: 25px;
-    text-decoration: none;
+nav a {
     color: white;
-    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 18px;
 }
 
 /* Hero */
@@ -190,22 +194,23 @@ body {
 
 <div class="container">
 
-<!-- Navbar -->
+<!-- Navigation -->
 
-<div class="navbar">
+<nav>
+<h1 style="display:flex;align-items:center;gap:10px;">
+<img src="logo.png" alt="Off Camp " style="height:36px;width:36px;border-radius:8px;">
+<span>Off Camp</span>
+</h1>
 
-<div class="logo">
-Off Camp
+<div>
+<a href="/off-campus-jobs.html">Jobs</a>
+<a href="/internships-for-freshers.html">Internships</a>
+<a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
+<a href="/interview-preparation-questions.html">AI Based Interview Prep</a>
+<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;margin-left:18px;">Get the App</button>
 </div>
 
-<div class="nav-links">
-<a href="/">Home</a>
-<a href="/internships.html">Internships</a>
-<a href="/resume-builder.html">Resume Builder</a>
-<a href="/interview-prep.html">Interview Prep</a>
-</div>
-
-</div>
+</nav>
 
 <!-- Hero -->
 
@@ -376,8 +381,8 @@ Scan the QR code to download our Android app and get daily job updates, internsh
 
 <!-- Replace this image with your real QR code -->
 
-<img src="images/QR.png" alt="Download Off Camp App QR Code" style="width:180px;border-radius:12px;">
-<p style="margin-top:10px;font-size:14px;">Or search <b>Off Camp: Job Search App</b> on Play Store</p>
+<img src="QR.png" alt="Download Off Camp App QR Code" style="width:180px;border-radius:12px;">
+
 </div>
 
 <div class="card">
@@ -394,7 +399,7 @@ Explore verified off campus jobs, internships, and fresher opportunities from mu
 
 <!-- Replace with your real app screenshot -->
 
-<img src="images/Frame 3.png" alt="Off Camp App Screenshot" style="width:220px;border-radius:12px;">
+<img src="Frame 3.png" alt="Off Camp App Screenshot" style="width:220px;border-radius:12px;">
 
 </div>
 
@@ -413,4 +418,25 @@ Explore verified off campus jobs, internships, and fresher opportunities from mu
 </div>
 
 </body>
+    <script>
+
+const modal = document.getElementById('appModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+
+openBtn.onclick = function() {
+    modal.style.display = 'flex';
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+</script>
 </html>
