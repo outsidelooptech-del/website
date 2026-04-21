@@ -188,8 +188,11 @@ nav a {
 <a href="/remote-internships.html">Internships</a>
 <a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
 <a href="/interview-preparation-questions.html">AI Based Interview Prep</a>
-<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;">Get the App</button>
-
+<button id="openModal" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border: none; border-radius: 10px; background: linear-gradient(135deg, #7b5cff, #a855f7); color: white; font-weight: 600; cursor: pointer;">
+  <!-- Icon as src -->
+  <img src="scan.svg" alt="App Icon" style="width: 20px; height: 20px;">  
+  <span>Get the App</span>
+</button>
 
 </nav>
 
@@ -449,6 +452,110 @@ fetchAllFeeds();
 
 // Auto refresh jobs every 10 minutes
 setInterval(fetchAllFeeds, 10 * 60 * 1000);
+
+</script>
+    <div id="installBar">
+50+ Companies Jobs at one place
+
+<a href="https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE">
+
+Install App
+
+</a>
+
+</div>
+
+<style>
+
+#installBar {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background: #7b5cff;
+color: white;
+padding: 14px;
+text-align: center;
+font-weight: 600;
+z-index: 9999;
+}
+
+#installBar a {
+background: white;
+color: black;
+padding: 8px 14px;
+border-radius: 8px;
+margin-left: 10px;
+text-decoration: none;
+}
+
+</style>
+
+
+
+<!-- App Download Modal -->
+<div id="appModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);justify-content:center;align-items:center;z-index:999;">
+
+<div style="background:#ffffff;color:#111;border-radius:24px;max-width:900px;width:95%;display:flex;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.6);">
+
+<!-- Left Side Phone Image -->
+<div style="flex:1;background:#f3e9dd;display:flex;justify-content:center;align-items:center;padding:30px;">
+<img src="Frame 3.png" alt="App Screenshot" style="width:260px;max-width:100%;border-radius:30px;">
+</div>
+
+<!-- Right Side Content -->
+<div style="flex:1.2;padding:40px;">
+
+<button id="closeModal" style="position:absolute;top:15px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;">×</button>
+
+<div style="display:inline-block;background:#f1f1f1;padding:6px 14px;border-radius:20px;font-size:14px;margin-bottom:18px;">
+50+ Companies Jobs at one place
+</div>
+
+<h2 style="font-size:34px;margin:0 0 15px 0;line-height:1.2;">
+Download the Off Camp : Job Search App
+</h2>
+
+<p style="color:#555;font-size:16px;margin-bottom:25px;">
+Get instant access to off-campus jobs, internships, and fresher hiring updates directly on your phone.
+</p>
+
+<div style="display:flex;gap:25px;align-items:center;background:#f7f7f7;padding:20px;border-radius:18px;">
+
+<!-- QR Code -->
+<div style="text-align:center;">
+<img src="QR.png" alt="QR Code" style="width:120px;height:120px;">
+<div style="font-size:12px;color:#666;margin-top:6px;">SCAN TO DOWNLOAD</div>
+</div>
+
+
+<!-- Google Play Button -->
+<div>
+<a href="https://play.google.com/store/apps/details?id=com.first.offcamp" target="_blank" style="display:inline-block;">
+<img src="googleplay.webp" alt="Get it on Google Play" style="height:55px;">
+</a>
+<div style="font-size:12px;color:#666;margin-top:8px;">Available on Android</div>
+</div>
+
+<script>
+
+const modal = document.getElementById('appModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+
+openBtn.onclick = function() {
+    modal.style.display = 'flex';
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
 </script>
 
