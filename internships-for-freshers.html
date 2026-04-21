@@ -4,38 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remote Internships 2026 | Work From Home Internships for Students & Freshers</title>
+<title>Remote Internships 2026 | Work From Home Internships for Students & Freshers | Off Camp</title>
 
-<meta name="description" content="Find the latest remote internships for students and freshers in India. Apply to software, data analyst, marketing, AI, and paid internships from top companies. Updated daily.">
+<meta name="description" content="Latest remote internships for students and freshers. Explore paid internships, software internships, AI internships, and work from home internship opportunities from top companies worldwide.">
 
-<meta name="keywords" content="
-remote internships 2026,
-work from home internships,
-internships for students India,
-paid internships India,
-software engineer internship,
-data analyst internship,
-AI internship,
-summer internships 2026,
-internships for freshers,
-online internships India,
-engineering internships,
-internship for 2024 2025 2026 batch,
-internships with stipend,
-remote internship opportunities,
-virtual internships India
-">
+<meta name="keywords" content="remote internships, work from home internships, paid internships, software internship, AI internship, data analyst internship, engineering internships, internships for students">
 
-<link rel="canonical" href="https://offcamp.online/internships.html">
-
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "WebSite",
- "name": "Off Camp",
- "url": "https://offcamp.online"
-}
-</script>
+<link rel="canonical" href="https://offcamp.online/remote-internships.html">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -49,11 +24,9 @@ virtual internships India
 }
 
 body {
-    background: linear-gradient(180deg, #020617, #020617);
+    background: #020617;
     color: white;
 }
-
-/* NAVBAR */
 
 nav {
     display: flex;
@@ -63,21 +36,16 @@ nav {
     position: sticky;
     top: 0;
     background: rgba(0,0,0,0.3);
+    z-index: 10;
 }
-
-nav h1 {
-    font-size: 20px;
-}
-
-/* HERO */
 
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
+.hero h2 {
+    font-size: 34px;
     margin-bottom: 10px;
 }
 
@@ -85,23 +53,21 @@ nav h1 {
     color: #cbd5f5;
 }
 
-/* SEARCH */
-
-.search-box {
+.controls {
     display: flex;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
-.search-box input {
-    width: 90%;
-    max-width: 500px;
-    padding: 14px;
-    border-radius: 12px;
+.controls input,
+.controls select {
+    padding: 12px;
+    border-radius: 10px;
     border: none;
+    min-width: 180px;
 }
-
-/* GRID */
 
 .job-grid {
     display: grid;
@@ -109,8 +75,6 @@ nav h1 {
     gap: 25px;
     padding: 30px;
 }
-
-/* CARD */
 
 .job-card {
     background: linear-gradient(135deg, #0ea5e9, #6366f1);
@@ -177,18 +141,30 @@ nav h1 {
     text-decoration: none;
 }
 
-@media(max-width:600px) {
-    .hero h1 {
-        font-size: 26px;
-    }
+.pagination {
+    text-align: center;
+    margin: 20px;
+}
+
+.pagination button {
+    margin: 5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
 }
 
 </style>
+
 </head>
 
 <body>
-
-<!-- NAV -->
 
 <nav>
 <h1 style="display:flex;align-items:center;gap:10px;">
@@ -197,277 +173,264 @@ Off Camp
 </h1>
 </nav>
 
-<!-- HERO -->
-
 <div class="hero">
 
 <h2>Latest Remote Internships for Students & Freshers 2026</h2>
 
 <p>
-
-Explore verified remote internships, paid internships, and work from home internship opportunities from top companies in India.
-
+Explore verified remote internships from multiple global job boards. Find software internships, data analyst internships, AI internships, and paid internships for students and freshers updated daily.
 </p>
 
-<div class="search-box">
-<input type="text" id="search" placeholder="Search internships, companies...">
-</div>
+<div class="controls">
+
+<input
+id="search"
+type="text"
+placeholder="Search internships or companies...">
+
+<select id="sort">
+<option value="new">Sort: Newest</option>
+<option value="old">Sort: Oldest</option>
+</select>
+
+<select id="locationFilter">
+<option value="all">All Locations</option>
+<option value="Remote">Remote</option>
+<option value="Worldwide">Worldwide</option>
+</select>
 
 </div>
 
-<!-- INTERNSHIP LIST -->
+</div>
 
 <div id="jobs" class="job-grid"></div>
 
-<!-- FIREBASE -->
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<div id="pagination" class="pagination"></div>
 
 <script>
 
 const container = document.getElementById("jobs");
+const paginationContainer = document.getElementById("pagination");
+
 const searchInput = document.getElementById("search");
+const sortSelect = document.getElementById("sort");
+const locationFilter = document.getElementById("locationFilter");
 
 let allJobs = [];
-let currentPage = 1;
+let filteredJobs = [];
 
+let currentPage = 1;
 const jobsPerPage = 9;
 
+const feeds = [
+"https://remoteok.com/rss",
+"https://weworkremotely.com/remote-jobs.rss",
+"https://remotive.com/remote-jobs.rss"
+];
+
 function showLoading() {
-    container.innerHTML =
-    "<p style='text-align:center'>Loading internships...</p>";
+container.innerHTML = "<div class='loading'>Loading internships...</div>";
 }
 
-async function fetchRemoteInternships() {
+async function fetchAllFeeds() {
 
-    showLoading();
+showLoading();
 
-    try {
+try {
 
-        const response =
-        await fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://remoteok.com/rss"
-        );
+let jobs = [];
 
-        const data = await response.json();
+for (const feed of feeds) {
 
-        allJobs = data.items.map(item => {
+const response = await fetch(
+`https://api.rss2json.com/v1/api.json?rss_url=${feed}`
+);
 
-            return {
+const data = await response.json();
 
-                title:
-                item.title || "Internship",
+if (data.items) {
 
-                company:
-                item.author || "Company",
+const mapped = data.items.map(item => ({
 
-                location:
-                item.categories?.join(", ")
-                || "Remote",
+title: item.title || "Internship",
+company: item.author || "Company",
+location: item.categories?.join(", ") || "Remote",
+link: item.link,
+image: item.thumbnail || item.enclosure?.link || "logo.png",
+date: new Date(item.pubDate)
 
-                stipend:
-                "Paid",
+}));
 
-                link:
-                item.link,
+jobs = jobs.concat(mapped);
 
-                image:
-                item.thumbnail
-                || "logo.png"
+}
 
-            };
+}
 
-        });
+const uniqueJobs = [];
+const links = new Set();
 
-        renderJobs();
+jobs.forEach(job => {
 
-        createPagination();
+if (!links.has(job.link)) {
+links.add(job.link);
+uniqueJobs.push(job);
+}
 
-    }
+});
 
-    catch (error) {
+allJobs = uniqueJobs;
 
-        container.innerHTML =
-        "<p>Error loading internships</p>";
+applyFilters();
 
-        console.log(error);
+}
 
-    }
+catch (error) {
+
+container.innerHTML = "Error loading internships";
+
+console.log(error);
+
+}
+
+}
+
+function applyFilters() {
+
+const searchValue = searchInput.value.toLowerCase();
+const locationValue = locationFilter.value;
+
+filteredJobs = allJobs.filter(job => {
+
+const matchesSearch =
+job.title.toLowerCase().includes(searchValue) ||
+job.company.toLowerCase().includes(searchValue);
+
+const matchesLocation =
+locationValue === "all" ||
+job.location.includes(locationValue);
+
+return matchesSearch && matchesLocation;
+
+});
+
+if (sortSelect.value === "new") {
+filteredJobs.sort((a, b) => b.date - a.date);
+} else {
+filteredJobs.sort((a, b) => a.date - b.date);
+}
+
+currentPage = 1;
+
+renderJobs();
+createPagination();
 
 }
 
 function renderJobs() {
 
-    container.innerHTML = "";
+container.innerHTML = "";
 
-    const start =
-    (currentPage - 1) * jobsPerPage;
+const start = (currentPage - 1) * jobsPerPage;
+const end = start + jobsPerPage;
 
-    const end =
-    start + jobsPerPage;
+const jobsToShow = filteredJobs.slice(start, end);
 
-    const jobsToShow =
-    allJobs.slice(start, end);
+jobsToShow.forEach(job => {
 
-    jobsToShow.forEach(job => {
+const card = `
 
-        const card = `
+<div class="job-card">
 
-        <div class="job-card">
+<div class="job-header">
 
-            <div class="job-header">
+<img
+src="${job.image}"
+onerror="this.src='logo.png'">
 
-                <img src="${job.image}"
-                onerror="this.src='logo.png'">
+<div class="job-title">
+${job.title}
+</div>
 
-                <div class="job-title">
+</div>
 
-                ${job.title}
+<div class="tags">
 
-                </div>
+<span class="tag">
+📍 ${job.location}
+</span>
 
-            </div>
+<span class="tag">
+🏢 ${job.company}
+</span>
 
-            <div class="tags">
+</div>
 
-                <span class="tag">
+<div class="job-footer">
 
-                📍 ${job.location}
+<span>
+💼 Internship
+</span>
 
-                </span>
+<span>
+🌎 Remote
+</span>
 
-                <span class="tag">
+</div>
 
-                🏢 ${job.company}
+<a
+href="${job.link}"
+target="_blank"
+class="apply-btn">
+Apply Now
+</a>
 
-                </span>
+</div>
 
-            </div>
+`;
 
-            <div class="job-footer">
+container.innerHTML += card;
 
-                <span>
-
-                💼 Internship
-
-                </span>
-
-                <span>
-
-                💰 ${job.stipend}
-
-                </span>
-
-            </div>
-
-            <a href="${job.link}"
-            target="_blank"
-            class="apply-btn">
-
-            Apply Now
-
-            </a>
-
-        </div>
-
-        `;
-
-        container.innerHTML += card;
-
-    });
+});
 
 }
 
 function createPagination() {
 
-    const pageCount =
-    Math.ceil(allJobs.length / jobsPerPage);
+paginationContainer.innerHTML = "";
 
-    let paginationHTML =
-    "<div style='text-align:center;margin:20px'>";
+const pageCount =
+Math.ceil(filteredJobs.length / jobsPerPage);
 
-    for (let i = 1; i <= pageCount; i++) {
+for (let i = 1; i <= pageCount; i++) {
 
-        paginationHTML +=
+const btn = document.createElement("button");
 
-        `<button
-        onclick="goToPage(${i})"
-        style="
-        margin:5px;
-        padding:8px 12px;
-        border-radius:8px;
-        border:none;
-        cursor:pointer;
-        ">
+btn.innerText = i;
 
-        ${i}
+btn.onclick = () => {
+currentPage = i;
+renderJobs();
+};
 
-        </button>`;
-
-    }
-
-    paginationHTML += "</div>";
-
-    container.innerHTML += paginationHTML;
+paginationContainer.appendChild(btn);
 
 }
 
-function goToPage(page) {
-
-    currentPage = page;
-
-    renderJobs();
-
-    createPagination();
-
 }
 
-searchInput.addEventListener(
-"input",
-() => {
+searchInput.addEventListener("input", applyFilters);
 
-    const value =
-    searchInput.value
-    .toLowerCase();
+sortSelect.addEventListener("change", applyFilters);
 
-    const filtered =
-    allJobs.filter(job =>
+locationFilter.addEventListener("change", applyFilters);
 
-        job.title
-        .toLowerCase()
-        .includes(value)
+fetchAllFeeds();
 
-        ||
-
-        job.company
-        .toLowerCase()
-        .includes(value)
-
-    );
-
-    allJobs = filtered;
-
-    currentPage = 1;
-
-    renderJobs();
-
-    createPagination();
-
-}
-
-);
-
-fetchRemoteInternships();
+// Auto refresh jobs every 10 minutes
+setInterval(fetchAllFeeds, 10 * 60 * 1000);
 
 </script>
-
-<!-- RSS FEED FOR REMOTE INTERNSHIPS -->
-
-<link rel="alternate"
-type="application/rss+xml"
-title="Remote Internships RSS"
-href="/rss/remote-internships.xml">
 
 </body>
 </html>
