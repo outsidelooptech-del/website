@@ -226,41 +226,91 @@ Explore verified remote internships, paid internships, and work from home intern
 
 <script>
 
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "off-camp-61317.firebaseapp.com",
-  databaseURL: "https://off-camp-61317-default-rtdb.firebaseio.com",
-  projectId: "off-camp-61317"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.database();
-
 const container = document.getElementById("jobs");
 const searchInput = document.getElementById("search");
 
 let allJobs = [];
+let currentPage = 1;
 
-db.ref("mydatabases/btech/internships").on("value", snapshot => {
+const jobsPerPage = 9;
 
-    allJobs = [];
+function showLoading() {
+    container.innerHTML =
+    "<p style='text-align:center'>Loading internships...</p>";
+}
 
-    snapshot.forEach(child => {
+async function fetchRemoteInternships() {
 
-        allJobs.push(child.val());
+    showLoading();
 
-    });
+    try {
 
-    renderJobs(allJobs);
+        const response =
+        await fetch(
+        "https://api.rss2json.com/v1/api.json?rss_url=https://remoteok.com/rss"
+        );
 
-});
+        const data = await response.json();
 
-function renderJobs(jobs) {
+        allJobs = data.items.map(item => {
+
+            return {
+
+                title:
+                item.title || "Internship",
+
+                company:
+                item.author || "Company",
+
+                location:
+                item.categories?.join(", ")
+                || "Remote",
+
+                stipend:
+                "Paid",
+
+                link:
+                item.link,
+
+                image:
+                item.thumbnail
+                || "logo.png"
+
+            };
+
+        });
+
+        renderJobs();
+
+        createPagination();
+
+    }
+
+    catch (error) {
+
+        container.innerHTML =
+        "<p>Error loading internships</p>";
+
+        console.log(error);
+
+    }
+
+}
+
+function renderJobs() {
 
     container.innerHTML = "";
 
-    jobs.forEach(job => {
+    const start =
+    (currentPage - 1) * jobsPerPage;
+
+    const end =
+    start + jobsPerPage;
+
+    const jobsToShow =
+    allJobs.slice(start, end);
+
+    jobsToShow.forEach(job => {
 
         const card = `
 
@@ -268,12 +318,12 @@ function renderJobs(jobs) {
 
             <div class="job-header">
 
-                <img src="${job['Company Logo'] || 'logo.png'}"
+                <img src="${job.image}"
                 onerror="this.src='logo.png'">
 
                 <div class="job-title">
 
-                ${job['Job Title']}
+                ${job.title}
 
                 </div>
 
@@ -283,13 +333,13 @@ function renderJobs(jobs) {
 
                 <span class="tag">
 
-                📍 ${job.Location || 'Remote'}
+                📍 ${job.location}
 
                 </span>
 
                 <span class="tag">
 
-                🎓 ${job.Duration || 'Internship'}
+                🏢 ${job.company}
 
                 </span>
 
@@ -305,13 +355,13 @@ function renderJobs(jobs) {
 
                 <span>
 
-                💰 ${job.Stipend || 'Paid'}
+                💰 ${job.stipend}
 
                 </span>
 
             </div>
 
-            <a href="${job['Apply Link']}"
+            <a href="${job.link}"
             target="_blank"
             class="apply-btn">
 
@@ -329,23 +379,86 @@ function renderJobs(jobs) {
 
 }
 
-/* SEARCH */
+function createPagination() {
 
-searchInput.addEventListener("input", () => {
+    const pageCount =
+    Math.ceil(allJobs.length / jobsPerPage);
 
-    const value = searchInput.value.toLowerCase();
+    let paginationHTML =
+    "<div style='text-align:center;margin:20px'>";
 
-    const filtered = allJobs.filter(job =>
+    for (let i = 1; i <= pageCount; i++) {
 
-        job['Job Title'].toLowerCase().includes(value) ||
+        paginationHTML +=
 
-        job['Company Name'].toLowerCase().includes(value)
+        `<button
+        onclick="goToPage(${i})"
+        style="
+        margin:5px;
+        padding:8px 12px;
+        border-radius:8px;
+        border:none;
+        cursor:pointer;
+        ">
+
+        ${i}
+
+        </button>`;
+
+    }
+
+    paginationHTML += "</div>";
+
+    container.innerHTML += paginationHTML;
+
+}
+
+function goToPage(page) {
+
+    currentPage = page;
+
+    renderJobs();
+
+    createPagination();
+
+}
+
+searchInput.addEventListener(
+"input",
+() => {
+
+    const value =
+    searchInput.value
+    .toLowerCase();
+
+    const filtered =
+    allJobs.filter(job =>
+
+        job.title
+        .toLowerCase()
+        .includes(value)
+
+        ||
+
+        job.company
+        .toLowerCase()
+        .includes(value)
 
     );
 
-    renderJobs(filtered);
+    allJobs = filtered;
 
-});
+    currentPage = 1;
+
+    renderJobs();
+
+    createPagination();
+
+}
+
+);
+
+fetchRemoteInternships();
 
 </script>
 
