@@ -151,7 +151,30 @@ Get instant access to off-campus jobs, internships, and fresher hiring updates d
 </a>
 <div style="font-size:12px;color:#666;margin-top:8px;">Available on Android</div>
 </div>
-      <div id="installBar">
+      
+<script>
+
+const modal = document.getElementById('appModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+
+openBtn.onclick = function() {
+    modal.style.display = 'flex';
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+</script>
+
+    <div id="installBar">
 50+ Companies Jobs at one place
 
 <a href="https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE">
@@ -189,28 +212,6 @@ text-decoration: none;
 </style>
     </div>
 
-<script>
-
-const modal = document.getElementById('appModal');
-const openBtn = document.getElementById('openModal');
-const closeBtn = document.getElementById('closeModal');
-
-openBtn.onclick = function() {
-    modal.style.display = 'flex';
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-
-</script>
-</div>
 
 </body>
 </html>
