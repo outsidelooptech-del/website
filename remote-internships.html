@@ -28,15 +28,28 @@ body {
     color: white;
 }
 
-nav {
+
+    nav {
     display: flex;
     justify-content: space-between;
-    padding: 18px 30px;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 10;
+}
+
+    nav h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .hero {
@@ -168,9 +181,16 @@ nav {
 
 <nav>
 <h1 style="display:flex;align-items:center;gap:10px;">
-<img src="logo.png" style="height:32px;width:32px;border-radius:8px;">
-Off Camp
+<img src="logo.png" alt="First Offcamp Logo" style="height:36px;width:36px;border-radius:8px;">
+<span>Off Camp</span>
 </h1>
+<a href="/off-campus-jobs.html">Jobs</a>
+<a href="/remote-internships.html">Internships</a>
+<a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
+<a href="/interview-preparation-questions.html">AI Based Interview Prep</a>
+<button id="openModal" style="padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#7b5cff,#a855f7);color:white;font-weight:600;cursor:pointer;">Get the App</button>
+
+
 </nav>
 
 <div class="hero">
