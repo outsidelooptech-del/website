@@ -26,6 +26,7 @@
 body {
     background: #020617;
     color: white;
+     padding-bottom: 90px;
 }
 
 
@@ -156,15 +157,32 @@ nav a {
 
 .pagination {
     text-align: center;
-    margin: 20px;
+    margin: 40px 20px 100px; /* space above install bar */
 }
 
 .pagination button {
-    margin: 5px;
-    padding: 8px 14px;
-    border-radius: 8px;
+    margin: 6px;
+    padding: 10px 16px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+
+    background: #1e293b;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+    background: #7b5cff;
+    transform: translateY(-1px);
+}
+
+.pagination button.active {
+    background: #7b5cff;
+    color: white;
 }
 
 .loading {
@@ -427,15 +445,23 @@ paginationContainer.innerHTML = "";
 const pageCount =
 Math.ceil(filteredJobs.length / jobsPerPage);
 
-for (let i = 1; i <= pageCount; i++) {
+const startPage = Math.max(1, currentPage - 2);
+const endPage = Math.min(pageCount, currentPage + 2);
+
+for (let i = startPage; i <= endPage; i++) {
 
 const btn = document.createElement("button");
 
 btn.innerText = i;
 
+if (i === currentPage) {
+    btn.classList.add("active");
+}
+
 btn.onclick = () => {
-currentPage = i;
-renderJobs();
+    currentPage = i;
+    renderJobs();
+    createPagination();
 };
 
 paginationContainer.appendChild(btn);
@@ -456,7 +482,6 @@ fetchAllFeeds();
 setInterval(fetchAllFeeds, 10 * 60 * 1000);
 
 </script>
-   </div>
 
 <div id="installBar">
 <span class="glitter">
