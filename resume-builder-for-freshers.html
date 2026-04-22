@@ -10,6 +10,9 @@
 <title>Free Resume Builder for Freshers | ATS Friendly Resume</title>
 <meta name="description" content="Create professional resumes using our free resume builder. ATS-friendly templates designed for freshers.">
 <meta name="keywords" content="resume builder, free resume builder, ATS resume, resume for freshers">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="shortcut icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="canonical" href="https://offcamp.online/resume-builder-for-freshers.html">
 
 <style>
@@ -163,8 +166,10 @@ justify-content: center;
 <nav>
 
 <div class="nav-left">
-    <img src="logo.png" alt="Offcamp Logo">
-    <a href="https://offcamp.online/">Off Camp</a>
+<a href="https://offcamp.online/" style="display:flex;align-items:center;gap:10px;">
+<img src="logo.png" alt="Offcamp Logo">
+<span>Off Camp</span>
+</a>
 </div>
 
 <!-- HAMBURGER -->
@@ -194,7 +199,7 @@ justify-content: center;
 Build ATS-friendly resumes using our free resume builder designed for freshers and students.
 </p>
 
-<img src="Index1.jpeg" alt="Free resume builder for freshers">
+<img src="Index1.jpeg" alt="Free resume builder for freshers" loading="lazy">
 </div>
 
 <div class="features">
@@ -313,7 +318,7 @@ background-position: 200% center;
 
 <!-- Left Side Phone Image -->
 <div style="flex:1;background:#f3e9dd;display:flex;justify-content:center;align-items:center;padding:30px;">
-<img src="Frame 3.png" alt="App Screenshot" style="width:260px;max-width:100%;border-radius:30px;">
+<img src="Frame 3.png" alt="App Screenshot" style="width:260px;max-width:100%;border-radius:30px;" loading="lazy">
 </div>
 
 <!-- Right Side Content -->
@@ -337,7 +342,7 @@ Get instant access to off-campus jobs, internships, and fresher hiring updates d
 
 <!-- QR Code -->
 <div style="text-align:center;">
-<img src="QR.png" alt="QR Code" style="width:120px;height:120px;">
+<img src="QR.png" alt="QR Code" style="width:120px;height:120px;" loading="lazy">
 <div style="font-size:12px;color:#666;margin-top:6px;">SCAN TO DOWNLOAD</div>
 </div>
 
@@ -349,13 +354,17 @@ Get instant access to off-campus jobs, internships, and fresher hiring updates d
 </a>
 <div style="font-size:12px;color:#666;margin-top:8px;">Available on Android</div>
 </div>
-    </div>
+</div>
+</div>
+</div>
 
 <script>
 
 const modal = document.getElementById('appModal');
 const openBtn = document.getElementById('openModal');
 const closeBtn = document.getElementById('closeModal');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
 openBtn.onclick = function() {
     modal.style.display = 'flex';
