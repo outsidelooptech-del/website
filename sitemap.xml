@@ -19,7 +19,7 @@
 
   <!-- Internships -->
   <url>
-    <loc>https://offcamp.online/internships-for-freshers</loc>
+  <loc>https://offcamp.online/remote-internships.html</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -39,22 +39,6 @@
     <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- Companies -->
-  <url>
-    <loc>https://offcamp.online/company-career-jobs</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Freshers Jobs -->
-  <url>
-    <loc>https://offcamp.online/fresher-jobs-in-india</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
   </url>
 
 </urlset>
