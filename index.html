@@ -207,7 +207,9 @@ footer {
 <nav>
 <h1 style="display:flex;align-items:center;gap:10px;">
 <img src="logo.png" alt="First Offcamp Logo" style="height:36px;width:36px;border-radius:8px;">
-<span>Off Camp</span>
+<a href="https://offcamp.online/">
+  <span>Off Camp</span>
+</a>
 </h1>
 <a href="/off-campus-jobs.html">Jobs</a>
 <a href="/remote-internships.html">Internships</a>
@@ -245,23 +247,23 @@ Download App
 
 <!-- Features Section -->
 <div class="section">
-<h3>Powerful Features</h3>
+<h3>Everything You Need to Get Hired Faster</h3>
 
 <div class="features">
 
 <div class="card">
 <h4>Off-Campus Jobs & Internships</h4>
-<p>Discover verified fresher jobs and internships for all degree backgrounds including BA, BCom, BSc, BBA, and BTech.</p>
+<p>Discover verified fresher jobs and internships from 50+ companies for all degree backgrounds including BA, BCom, BSc, BBA, and BTech.</p>
 </div>
 
 <div class="card">
 <h4>Direct Company Career Page Jobs</h4>
-<p>Apply directly on official company websites from 1000+ companies with no fake listings or third-party spam.</p>
+<p>Apply directly on official company websites from 1000+ verified companies.</p>
 </div>
 
 <div class="card">
-<h4>AI Powered Mock Interviews</h4>
-<p>Practice interviews with AI feedback to improve confidence, communication skills, and performance.</p>
+<h4>AI Mock Interviews with Instant Feedback</h4>
+<p>Practice real interview questions and get instant AI feedback to improve confidence and performance.</p>
 </div>
 
 <div class="card">
@@ -275,8 +277,8 @@ Download App
 </div>
 
 <div class="card">
-<h4>Career Community & Updates</h4>
-<p>Connect with job seekers, read real interview experiences, and stay updated with daily career news.</p>
+<h4>Daily Job Alerts & Notifications</h4>
+<p>Get instant alerts for new jobs, internships, and off-campus drives directly on your phone.</p>
 </div>
 
 </div>
@@ -325,10 +327,13 @@ New job opportunities are updated daily.
 </p>
 
 </div>
-    <div id="installBar">
-50+ Companies Jobs at one place
 
-<a href="https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE">
+<div id="installBar">
+<span class="glitter">
+50+ Companies Hiring — Apply Now
+</span>
+
+<a href="https://play.google.com/store/apps/details?id=com.first.offcamp">
 
 Install App
 
@@ -349,7 +354,10 @@ padding: 14px;
 text-align: center;
 font-weight: 600;
 z-index: 9999;
+font-size: 16px;
 }
+
+/* Install Button */
 
 #installBar a {
 background: white;
@@ -358,6 +366,33 @@ padding: 8px 14px;
 border-radius: 8px;
 margin-left: 10px;
 text-decoration: none;
+font-weight: 700;
+}
+
+/* Glitter / Shimmer Effect */
+
+.glitter {
+background: linear-gradient(
+90deg,
+white 0%,
+#ffe066 40%,
+white 80%
+);
+
+background-size: 200% auto;
+
+color: transparent;
+
+-webkit-background-clip: text;
+background-clip: text;
+
+animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes shimmer {
+to {
+background-position: 200% center;
+}
 }
 
 </style>
