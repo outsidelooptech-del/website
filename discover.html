@@ -145,7 +145,7 @@ const card = document.getElementById("jobCard");
 
 async function fetchJobs() {
   try {
-    const res = await fetch("https://job-backend-gori.onrender.com/");
+    const res = await fetch("https://job-backend-gori.onrender.com/jobs");
     jobs = await res.json();
 
     if (jobs.length > 0) {
