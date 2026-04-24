@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>AI Job Copilot | Discover Fresher Jobs 2026</title>
+
+  <meta name="description" content="AI Job Copilot to discover latest fresher jobs, internships and entry level roles in India. Swipe, save and apply instantly.">
+
+  <meta name="keywords" content="off campus jobs, fresher jobs India, AI job search, job copilot, internships 2026, software engineer jobs, entry level jobs India">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="canonical" href="https://offcamp.online/discover.html">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .header p {
+      margin-top: 5px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* CARD AREA */
+    #card-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .job-card {
+      width: 320px;
+      padding: 25px;
+      border-radius: 20px;
+      background: #111827;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: grab;
+    }
+
+    .job-card h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .job-card p {
+      margin: 5px 0;
+      opacity: 0.85;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 3px;
+      font-size: 12px;
+      border-radius: 12px;
+      background: #1f2937;
+    }
+
+    /* ACTION BUTTONS */
+    .actions {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+    }
+
+    .actions button {
+      margin: 10px;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background: #1f2937;
+      color: white;
+      transition: 0.2s;
+    }
+
+    .actions button:hover {
+      transform: scale(1.1);
+    }
+
+    /* SWIPE ANIMATION */
+    .left {
+      transform: translateX(-400px) rotate(-10deg);
+      opacity: 0;
+    }
+
+    .right {
+      transform: translateX(400px) rotate(10deg);
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>🤖 AI Job Copilot</h1>
+    <p>Swipe. Discover. Get Hired Faster.</p>
+  </div>
+
+  <!-- CARD -->
+  <div id="card-container">
+    <div class="job-card" id="jobCard">
+      Loading jobs...
+    </div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button onclick="dislike()">❌</button>
+    <button onclick="saveJob()">💾</button>
+    <button onclick="applyJob()">🚀</button>
+  </div>
+
+ <script>
+ let jobs = [];
+let index = 0;
+
+const card = document.getElementById("jobCard");
+
+async function fetchJobs() {
+  try {
+    const res = await fetch("https://job-backend-gori.onrender.com/");
+    jobs = await res.json();
+
+    if (jobs.length > 0) {
+      renderJob();
+    } else {
+      card.innerHTML = "No jobs found";
+    }
+  } catch (err) {
+    console.error(err);
+    card.innerHTML = "Failed to load jobs";
+  }
+}
+
+function renderJob() {
+  if (!jobs.length) return;
+
+  const job = jobs[index];
+
+  card.classList.remove("left", "right");
+
+  card.innerHTML = `
+    <h2>${job.title}</h2>
+    <p>🏢 ${job.company}</p>
+    <p>📍 ${job.location}</p>
+    <p>💼 ${job.work_mode || ''} • ${job.job_type || ''}</p>
+
+    <p>${job.job_description || ''}</p>
+
+    <div class="tags">
+      <span class="tag">Fresher</span>
+      <span class="tag">AI Copilot</span>
+    </div>
+  `;
+}
+
+function nextJob(direction) {
+  card.classList.add(direction);
+
+  setTimeout(() => {
+    index++;
+    if (index >= jobs.length) index = 0;
+    renderJob();
+  }, 300);
+}
+
+function dislike() {
+  nextJob("left");
+}
+
+function saveJob() {
+  alert("Saved!");
+}
+
+function applyJob() {
+  window.open(jobs[index].apply_link || "#", "_blank");
+}
+
+/* Swipe */
+let startX = 0;
+
+card.addEventListener("mousedown", (e) => {
+  startX = e.clientX;
+});
+
+card.addEventListener("mouseup", (e) => {
+  let diff = e.clientX - startX;
+
+  if (diff > 100) {
+    saveJob();
+    nextJob("right");
+  } else if (diff < -100) {
+    dislike();
+  }
+});
+
+fetchJobs();
+ </script>
+</body>
+</html>
