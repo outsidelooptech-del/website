@@ -1,151 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hiring UI Clone</title>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">Off Camp</div>
-    <input type="text" placeholder="Search jobs..." class="search">
-    <div class="location">India</div>
-    <button class="signup">Sign up</button>
-</div>
-
-<!-- FILTER BAR -->
-<!-- FILTER ROW 1 -->
-<div class="filter-row">
-  <button onclick="openFilter('Departments')">Departments</button>
-<button onclick="openFilter('Salary')">Salary</button>
-<button onclick="openFilter('Commitment')">Commitment</button>
-<button onclick="openFilter('Experience')">Experience</button>
-<button onclick="openFilter('Job Titles')">Job Titles & Keywords</button>
-<button onclick="openFilter('Education')">Education</button>
-</div>
-
-<!-- FILTER ROW 2 -->
-<div class="filter-row">
-    <button>Encouraged to Apply</button>
-    <button>Company</button>
-    <button>Industry</button>
-    <button>Stage & Funding</button>
-    <button>Size</button>
-    <button>Founding Year</button>
-
-    <button class="save">Save Search</button>
-    <button class="share">Share</button>
-    <button class="clear">Clear Filters</button>
-</div>
-
-<!-- INFO BAR -->
-<div class="info-bar">
-    <span>116,217 jobs • 5,113 companies • India</span>
-
-    <div class="controls">
-        <select>
-            <option>Relevance</option>
-            <option>Newest</option>
-        </select>
-
-        <select>
-            <option>3 months</option>
-            <option>1 month</option>
-        </select>
-
-        <select>
-            <option>Easy apply</option>
-            <option>All</option>
-        </select>
-    </div>
-</div>
-
-<!-- JOB LIST -->
-<div class="container">
-
-    <!-- JOB CARD -->
-    <div class="card">
-        <h3>Business Risk Manager</h3>
-        <p class="location-text">Hyderabad, India</p>
-
-        <div class="tags">
-            <span>Onsite</span>
-            <span>Full Time</span>
-        </div>
-
-        <div class="company">
-            <img src="https://via.placeholder.com/40">
-            <div>
-                <p class="company-name">UBS</p>
-                <p class="company-desc">Investment Banking</p>
-            </div>
-        </div>
-
-        <p class="desc">
-            Role requires risk and control expertise with AI automation experience...
-        </p>
-
-        <div class="skills">
-            Power BI • Python • RPA
-        </div>
-    </div>
-<button onclick="openFilter('Departments')">Departments</button>
-<button onclick="openFilter('Commitment')">Commitment</button>
-
-    <!-- CARD 2 -->
-    <div class="card">
-        <h3>Client Service Manager</h3>
-        <p class="location-text">Bangalore, India</p>
-
-        <div class="tags">
-            <span>Onsite</span>
-            <span>Full Time</span>
-        </div>
-
-        <div class="company">
-            <img src="https://via.placeholder.com/40">
-            <div>
-                <p class="company-name">Standard Chartered</p>
-                <p class="company-desc">Banking</p>
-            </div>
-        </div>
-
-        <p class="desc">
-            Sales-focused role with 2-5 years experience...
-        </p>
-
-        <div class="skills">
-            Communication • Banking • Sales
-        </div>
-    </div>
-
-</div>
-    <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
-
-    <div id="panel">
-
-       <div style="display:flex; justify-content:space-between;">
-    <h3 id="title">Filter</h3>
-    <span onclick="closePopup()" style="cursor:pointer;">✖</span>
-</div>
-
-        <div id="content">
-            <!-- dynamic content will come here -->
-        </div>
-
-        <br>
-        <button onclick="closePopup()">Apply</button>
-
-    </div>
-
-</div>
-
-</body>
+<meta charset="UTF-8">
+<title>Hiring UI Clone</title>
 
 <style>
-  
-  body {
+
+/* BODY */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f5f6f8;
@@ -163,7 +25,6 @@
 .logo {
     font-weight: bold;
     color: #ff4f8b;
-    font-size: 18px;
 }
 
 .search {
@@ -174,109 +35,130 @@
     border: 1px solid #ddd;
 }
 
-.location {
-    margin-right: 15px;
-}
-
 .signup {
     background: #ffcc00;
     border: none;
     padding: 8px 16px;
     border-radius: 20px;
-    cursor: pointer;
 }
 
-/* FILTERS */
-.filters {
-    padding: 10px 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+/* ================= TOP SECTION ================= */
 
-.filters button {
-    padding: 8px 12px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
+.top-section {
     background: white;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
 }
 
-.clear {
-    color: red;
-}
-
-    /* FILTER ROWS */
+/* FILTER ROW */
 .filter-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px 20px;
+    align-items: center;
 }
 
 .filter-row button {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 8px 14px;
+    padding: 6px 12px;
     border-radius: 20px;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    background: white;
     font-size: 13px;
+    cursor: pointer;
 }
 
-.save {
-    background: #1abc9c;
-    color: white;
+.divider {
+    color: #aaa;
 }
 
+/* SHARE */
 .share {
     background: linear-gradient(45deg, purple, pink);
     color: white;
 }
 
+.new {
+    background: white;
+    color: purple;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 6px;
+}
+
+/* CLEAR */
 .clear {
     color: red;
     border: none;
 }
 
-/* INFO BAR */
-.info-bar {
+/* BANNER */
+
+
+/* CONTROLS */
+.controls-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+.controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* IMPORTANT */
+    margin-top: 10px;
+}
+
+/* LEFT SIDE */
+.left-info {
     font-size: 14px;
-}
-
-    #popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-}
-
-#panel {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 350px;
-    height: 100%;
-    background: white;
-    padding: 20px;
-    overflow-y: auto;
-    border-left: 2px solid #eee;
-}
-
-.controls select {
+    color: #555;
     margin-left: 10px;
-    padding: 6px;
-    border-radius: 8px;
+}
+
+/* RIGHT SIDE */
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* BANNER */
+.banner {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.banner a {
+    color: #ff4f8b;
+    text-decoration: none;
+}
+
+/* CONTROLS */
+.left-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.left-controls select {
+    padding: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-/* CONTAINER */
+.show-all {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 12px;
+    background: white;
+}
+
+
+.right-info {
+    color: #555;
+}
+
+/* ================= JOB CARDS ================= */
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -284,126 +166,186 @@
     padding: 20px;
 }
 
-/* CARD */
 .card {
     background: white;
+    padding: 15px;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: 0.2s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* ================= POPUP ================= */
+
+#popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    top: 0;
 }
 
-.location-text {
-    color: gray;
-    font-size: 14px;
+#panel {
+    position: absolute;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    transition: 0.3s;
 }
 
-/* TAGS */
-.tags {
-    margin: 10px 0;
+#panel.active {
+    right: 0;
 }
 
-.tags span {
-    background: #eee;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    margin-right: 5px;
+.apply-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #ff4f8b;
+    color: white;
+    border: none;
 }
 
-/* COMPANY */
-.company {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.company img {
-    border-radius: 6px;
-    margin-right: 10px;
-}
-
-.company-name {
-    font-weight: bold;
-}
-
-.company-desc {
-    font-size: 12px;
-    color: gray;
-}
-
-/* DESC */
-.desc {
-    font-size: 14px;
-    color: #555;
-}
-
-/* SKILLS */
-.skills {
-    font-size: 12px;
-    color: #777;
-    margin-top: 10px;
-}
 </style>
-    <script>
-        function openFilter(type) {
+</head>
 
-    // show popup
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Off Camp</div>
+    <input class="search" placeholder="Search jobs">
+    <button class="signup">Sign up</button>
+</div>
+
+<!-- TOP SECTION -->
+<div class="top-section">
+
+    <div class="filter-row">
+        <button onclick="openFilter('Departments')">Departments</button>
+        <button onclick="openFilter('Salary')">Salary</button>
+        <button onclick="openFilter('Commitment')">Commitment</button>
+        <button onclick="openFilter('Experience')">Experience</button>
+        <button onclick="openFilter('Job Titles')">Job Titles & Keywords</button>
+        <button onclick="openFilter('Education')">Education</button>
+        <button>Licenses</button>
+        <button>Security</button>
+        <button>Languages</button>
+        <button>Shifts</button>
+        <button>Travel</button>
+        <button>Benefits</button>
+        <button>Encouraged</button>
+
+        <span class="divider">|</span>
+
+        <button>Company</button>
+        <button>Industry</button>
+        <button>Stage</button>
+        <button>Size</button>
+        <button>Year</button>
+
+        <button class="share">Share <span class="new">NEW</span></button>
+        <button class="clear">Clear filters</button>
+    </div>
+
+
+
+    </div>
+    
+  <div class="controls-wrapper">
+
+    <!-- LEFT -->
+    <div class="left-info">
+        116,217 jobs · 5,113 companies - India
+    </div>
+
+    <!-- RIGHT -->
+    <div class="left-controls">
+        <select><option>Relevance</option></select>
+        <select><option>3 months</option></select>
+        <select><option>Easy or lengthy apply</option></select>
+        <button class="show-all">Show all jobs</button>
+    </div>
+
+</div>
+
+</div>
+
+<!-- JOBS -->
+<div class="container">
+    <div class="card">
+        <h3>Software Engineer</h3>
+        <p>Bangalore</p>
+    </div>
+
+    <div class="card">
+        <h3>Data Analyst</h3>
+        <p>Hyderabad</p>
+    </div>
+</div>
+
+<!-- FILTER PANEL -->
+<div id="popup" onclick="outsideClick(event)">
+    <div id="panel">
+
+        <div style="display:flex; justify-content:space-between;">
+            <h3 id="title">Filter</h3>
+            <span onclick="closePopup()">✖</span>
+        </div>
+
+        <div id="content"></div>
+
+        <button class="apply-btn" onclick="closePopup()">Apply</button>
+
+    </div>
+</div>
+
+<script>
+
+function openFilter(type) {
     document.getElementById("popup").style.display = "block";
+    setTimeout(() => document.getElementById("panel").classList.add("active"), 10);
 
-    // change title
     document.getElementById("title").innerText = type;
 
-    // change content
-    let content = document.getElementById("content");
+    let c = document.getElementById("content");
 
     if (type === "Departments") {
-        content.innerHTML = `
+        c.innerHTML = `
             <label><input type="checkbox"> Engineering</label><br>
-            <label><input type="checkbox"> Software</label>
+            <label><input type="checkbox"> Data</label>
         `;
     }
 
-        else if (type === "Salary") {
-    content.innerHTML = `
-        <label><input type="radio" name="salary"> 3-6 LPA</label><br>
-        <label><input type="radio" name="salary"> 6-10 LPA</label>
-    `;
-}
-
-else if (type === "Experience") {
-    content.innerHTML = `
-        <label><input type="checkbox"> 0-1 Years</label><br>
-        <label><input type="checkbox"> 1-3 Years</label>
-    `;
-}
-
-else if (type === "Education") {
-    content.innerHTML = `
-        <label><input type="checkbox"> Bachelors</label><br>
-        <label><input type="checkbox"> Masters</label>
-    `;
-}
-
-    else if (type === "Commitment") {
-        content.innerHTML = `
-            <label><input type="checkbox"> Full Time</label><br>
-            <label><input type="checkbox"> Internship</label>
+    else if (type === "Salary") {
+        c.innerHTML = `
+            <label><input type="radio"> 3-6 LPA</label><br>
+            <label><input type="radio"> 6-10 LPA</label>
         `;
+    }
+
+    else if (type === "Experience") {
+        c.innerHTML = `
+            <label><input type="checkbox"> 0-1</label><br>
+            <label><input type="checkbox"> 1-3</label>
+        `;
+    }
+
+    else {
+        c.innerHTML = `<p>No options yet</p>`;
     }
 }
 
 function closePopup() {
-    window.onclick = function(e) {
-    let popup = document.getElementById("popup");
-    if (e.target === popup) {
-        popup.style.display = "none";
-    }
+    document.getElementById("panel").classList.remove("active");
+    setTimeout(() => document.getElementById("popup").style.display = "none", 300);
 }
+
+function outsideClick(e) {
+    if (e.target.id === "popup") closePopup();
 }
-    </script>
+
+</script>
+
+</body>
 </html>
