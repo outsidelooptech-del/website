@@ -17,18 +17,12 @@
 <!-- FILTER BAR -->
 <!-- FILTER ROW 1 -->
 <div class="filter-row">
-    <button>Departments</button>
-    <button>Salary</button>
-    <button>Commitment</button>
-    <button>Experience</button>
-    <button>Job Titles & Keywords</button>
-    <button>Education</button>
-    <button>Licenses & Certifications</button>
-    <button>Security Clearance</button>
-    <button>Languages</button>
-    <button>Shifts & Schedules</button>
-    <button>Travel Requirement</button>
-    <button>Benefits & Perks</button>
+  <button onclick="openFilter('Departments')">Departments</button>
+<button onclick="openFilter('Salary')">Salary</button>
+<button onclick="openFilter('Commitment')">Commitment</button>
+<button onclick="openFilter('Experience')">Experience</button>
+<button onclick="openFilter('Job Titles')">Job Titles & Keywords</button>
+<button onclick="openFilter('Education')">Education</button>
 </div>
 
 <!-- FILTER ROW 2 -->
@@ -129,9 +123,12 @@
 </div>
     <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
 
-    <div style="background:white; width:300px; margin:100px auto; padding:20px; border-radius:10px;">
+    <div id="panel">
 
-        <h3 id="title">Filter</h3>
+       <div style="display:flex; justify-content:space-between;">
+    <h3 id="title">Filter</h3>
+    <span onclick="closePopup()" style="cursor:pointer;">✖</span>
+</div>
 
         <div id="content">
             <!-- dynamic content will come here -->
@@ -250,6 +247,28 @@
     font-size: 14px;
 }
 
+    #popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+#panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 2px solid #eee;
+}
+
 .controls select {
     margin-left: 10px;
     padding: 6px;
@@ -349,6 +368,27 @@
         `;
     }
 
+        else if (type === "Salary") {
+    content.innerHTML = `
+        <label><input type="radio" name="salary"> 3-6 LPA</label><br>
+        <label><input type="radio" name="salary"> 6-10 LPA</label>
+    `;
+}
+
+else if (type === "Experience") {
+    content.innerHTML = `
+        <label><input type="checkbox"> 0-1 Years</label><br>
+        <label><input type="checkbox"> 1-3 Years</label>
+    `;
+}
+
+else if (type === "Education") {
+    content.innerHTML = `
+        <label><input type="checkbox"> Bachelors</label><br>
+        <label><input type="checkbox"> Masters</label>
+    `;
+}
+
     else if (type === "Commitment") {
         content.innerHTML = `
             <label><input type="checkbox"> Full Time</label><br>
@@ -358,7 +398,12 @@
 }
 
 function closePopup() {
-    document.getElementById("popup").style.display = "none";
+    window.onclick = function(e) {
+    let popup = document.getElementById("popup");
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+}
 }
     </script>
 </html>
