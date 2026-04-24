@@ -96,6 +96,8 @@
             Power BI • Python • RPA
         </div>
     </div>
+<button onclick="openFilter('Departments')">Departments</button>
+<button onclick="openFilter('Commitment')">Commitment</button>
 
     <!-- CARD 2 -->
     <div class="card">
@@ -122,6 +124,22 @@
         <div class="skills">
             Communication • Banking • Sales
         </div>
+    </div>
+
+</div>
+    <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+
+    <div style="background:white; width:300px; margin:100px auto; padding:20px; border-radius:10px;">
+
+        <h3 id="title">Filter</h3>
+
+        <div id="content">
+            <!-- dynamic content will come here -->
+        </div>
+
+        <br>
+        <button onclick="closePopup()">Apply</button>
+
     </div>
 
 </div>
@@ -312,4 +330,35 @@
     margin-top: 10px;
 }
 </style>
+    <script>
+        function openFilter(type) {
+
+    // show popup
+    document.getElementById("popup").style.display = "block";
+
+    // change title
+    document.getElementById("title").innerText = type;
+
+    // change content
+    let content = document.getElementById("content");
+
+    if (type === "Departments") {
+        content.innerHTML = `
+            <label><input type="checkbox"> Engineering</label><br>
+            <label><input type="checkbox"> Software</label>
+        `;
+    }
+
+    else if (type === "Commitment") {
+        content.innerHTML = `
+            <label><input type="checkbox"> Full Time</label><br>
+            <label><input type="checkbox"> Internship</label>
+        `;
+    }
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+    </script>
 </html>
