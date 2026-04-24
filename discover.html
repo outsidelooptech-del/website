@@ -1,202 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>AI Job Copilot | HiringCafe Style Jobs</title>
+    <meta charset="UTF-8">
+    <title>Hiring UI Clone</title>
+</head>
+<body>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Off Camp</div>
+    <input type="text" placeholder="Search jobs..." class="search">
+    <div class="location">India</div>
+    <button class="signup">Sign up</button>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filters">
+    <button>Departments</button>
+    <button>Salary</button>
+    <button>Experience</button>
+    <button>Company</button>
+    <button>Industry</button>
+    <button class="clear">Clear Filters</button>
+</div>
+
+<!-- JOB LIST -->
+<div class="container">
+
+    <!-- JOB CARD -->
+    <div class="card">
+        <h3>Business Risk Manager</h3>
+        <p class="location-text">Hyderabad, India</p>
+
+        <div class="tags">
+            <span>Onsite</span>
+            <span>Full Time</span>
+        </div>
+
+        <div class="company">
+            <img src="https://via.placeholder.com/40">
+            <div>
+                <p class="company-name">UBS</p>
+                <p class="company-desc">Investment Banking</p>
+            </div>
+        </div>
+
+        <p class="desc">
+            Role requires risk and control expertise with AI automation experience...
+        </p>
+
+        <div class="skills">
+            Power BI • Python • RPA
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <h3>Client Service Manager</h3>
+        <p class="location-text">Bangalore, India</p>
+
+        <div class="tags">
+            <span>Onsite</span>
+            <span>Full Time</span>
+        </div>
+
+        <div class="company">
+            <img src="https://via.placeholder.com/40">
+            <div>
+                <p class="company-name">Standard Chartered</p>
+                <p class="company-desc">Banking</p>
+            </div>
+        </div>
+
+        <p class="desc">
+            Sales-focused role with 2-5 years experience...
+        </p>
+
+        <div class="skills">
+            Communication • Banking • Sales
+        </div>
+    </div>
+
+</div>
+
+</body>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f6f8;
 }
 
-/* TOP BAR */
-.topbar {
-  padding: 15px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #111827;
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.topbar input {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  width: 200px;
+.logo {
+    font-weight: bold;
+    color: #ff4f8b;
+    font-size: 18px;
 }
 
-/* FILTER ROW */
+.search {
+    flex: 1;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.location {
+    margin-right: 15px;
+}
+
+.signup {
+    background: #ffcc00;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* FILTERS */
 .filters {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding: 10px;
-  flex-wrap: wrap;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.filter-btn {
-  background: #1f2937;
-  padding: 8px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 13px;
+.filters button {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.clear {
+    color: red;
+}
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 /* CARD */
 .card {
-  width: 350px;
-  margin: 30px auto;
-  background: #111827;
-  padding: 20px;
-  border-radius: 15px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.2s;
 }
 
-/* POPUP */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.popup-content {
-  background: #1f2937;
-  width: 300px;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 10px;
+.location-text {
+    color: gray;
+    font-size: 14px;
 }
 
-.popup button {
-  margin-top: 10px;
-  padding: 8px;
+/* TAGS */
+.tags {
+    margin: 10px 0;
+}
+
+.tags span {
+    background: #eee;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* COMPANY */
+.company {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.company img {
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.company-desc {
+    font-size: 12px;
+    color: gray;
+}
+
+/* DESC */
+.desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* SKILLS */
+.skills {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
 }
 </style>
-</head>
-
-<body>
-
-<!-- TOP SEARCH -->
-<div class="topbar">
-  <input id="search" placeholder="Search jobs..." />
-  <input id="location" placeholder="Location (e.g. Bangalore)" />
-  <button onclick="applyFilters()">Search</button>
-</div>
-
-<!-- FILTERS -->
-<div class="filters">
-  <div class="filter-btn" onclick="openPopup('salary')">Salary</div>
-  <div class="filter-btn" onclick="openPopup('exp')">Experience</div>
-  <div class="filter-btn" onclick="openPopup('commit')">Commitment</div>
-  <div class="filter-btn" onclick="openPopup('edu')">Education</div>
-  <div class="filter-btn" onclick="openPopup('lang')">Languages</div>
-  <div class="filter-btn" onclick="resetFilters()">Reset</div>
-</div>
-
-<!-- JOB CARD -->
-<div class="card" id="jobCard">Loading jobs...</div>
-
-<!-- POPUPS -->
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h3 id="popupTitle"></h3>
-    <input id="popupInput" placeholder="Enter value..." />
-    <button onclick="saveFilter()">Apply</button>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
-
-<script>
-let jobs = [];
-let index = 0;
-let filters = {};
-let currentFilter = "";
-
-const API = "https://job-backend-gori.onrender.com/jobs";
-
-/* LOAD JOBS */
-async function loadJobs() {
-  const res = await fetch(API);
-  jobs = await res.json();
-  render();
-}
-
-/* RENDER */
-function render() {
-  if (!jobs.length) return;
-
-  const job = jobs[index];
-
-  document.getElementById("jobCard").innerHTML = `
-    <h2>${job.title}</h2>
-    <p>${job.company}</p>
-    <p>${job.location}</p>
-    <p>${job.work_mode} | ${job.job_type}</p>
-    <p>${job.job_description}</p>
-  `;
-}
-
-/* NEXT JOB */
-function nextJob() {
-  index++;
-  if (index >= jobs.length) index = 0;
-  render();
-}
-
-/* FILTER SYSTEM */
-function applyFilters() {
-  const keyword = document.getElementById("search").value;
-  const location = document.getElementById("location").value;
-
-  let url = `${API}/filter?`;
-
-  if (keyword) url += `keyword=${keyword}&`;
-  if (location) url += `location=${location}&`;
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      jobs = data;
-      index = 0;
-      render();
-    });
-}
-
-/* POPUP */
-function openPopup(type) {
-  currentFilter = type;
-  document.getElementById("popup").style.display = "block";
-  document.getElementById("popupTitle").innerText = "Set " + type;
-}
-
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-
-function saveFilter() {
-  const value = document.getElementById("popupInput").value;
-  filters[currentFilter] = value;
-  closePopup();
-}
-
-/* RESET */
-function resetFilters() {
-  filters = {};
-  loadJobs();
-}
-
-/* INIT */
-loadJobs();
-</script>
-
-</body>
 </html>
