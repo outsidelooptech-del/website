@@ -1,227 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>AI Job Copilot | HiringCafe Style Jobs</title>
 
-  <title>AI Job Copilot | Discover Fresher Jobs 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="AI Job Copilot to discover latest fresher jobs, internships and entry level roles in India. Swipe, save and apply instantly.">
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
 
-  <meta name="keywords" content="off campus jobs, fresher jobs India, AI job search, job copilot, internships 2026, software engineer jobs, entry level jobs India">
+/* TOP BAR */
+.topbar {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #111827;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.topbar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 200px;
+}
 
-  <link rel="canonical" href="https://offcamp.online/discover.html">
+/* FILTER ROW */
+.filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
+.filter-btn {
+  background: #1f2937;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
 
-    /* HEADER */
-    .header {
-      padding: 20px;
-    }
+/* CARD */
+.card {
+  width: 350px;
+  margin: 30px auto;
+  background: #111827;
+  padding: 20px;
+  border-radius: 15px;
+}
 
-    .header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
 
-    .header p {
-      margin-top: 5px;
-      font-size: 14px;
-      opacity: 0.7;
-    }
+.popup-content {
+  background: #1f2937;
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    /* CARD AREA */
-    #card-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .job-card {
-      width: 320px;
-      padding: 25px;
-      border-radius: 20px;
-      background: #111827;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      cursor: grab;
-    }
-
-    .job-card h2 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .job-card p {
-      margin: 5px 0;
-      opacity: 0.85;
-    }
-
-    .tags {
-      margin-top: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 10px;
-      margin: 3px;
-      font-size: 12px;
-      border-radius: 12px;
-      background: #1f2937;
-    }
-
-    /* ACTION BUTTONS */
-    .actions {
-      position: absolute;
-      bottom: 30px;
-      width: 100%;
-    }
-
-    .actions button {
-      margin: 10px;
-      padding: 15px;
-      font-size: 18px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      background: #1f2937;
-      color: white;
-      transition: 0.2s;
-    }
-
-    .actions button:hover {
-      transform: scale(1.1);
-    }
-
-    /* SWIPE ANIMATION */
-    .left {
-      transform: translateX(-400px) rotate(-10deg);
-      opacity: 0;
-    }
-
-    .right {
-      transform: translateX(400px) rotate(10deg);
-      opacity: 0;
-    }
-  </style>
+.popup button {
+  margin-top: 10px;
+  padding: 8px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>🤖 AI Job Copilot</h1>
-    <p>Swipe. Discover. Get Hired Faster.</p>
-  </div>
+<!-- TOP SEARCH -->
+<div class="topbar">
+  <input id="search" placeholder="Search jobs..." />
+  <input id="location" placeholder="Location (e.g. Bangalore)" />
+  <button onclick="applyFilters()">Search</button>
+</div>
 
-  <!-- CARD -->
-  <div id="card-container">
-    <div class="job-card" id="jobCard">
-      Loading jobs...
-    </div>
-  </div>
+<!-- FILTERS -->
+<div class="filters">
+  <div class="filter-btn" onclick="openPopup('salary')">Salary</div>
+  <div class="filter-btn" onclick="openPopup('exp')">Experience</div>
+  <div class="filter-btn" onclick="openPopup('commit')">Commitment</div>
+  <div class="filter-btn" onclick="openPopup('edu')">Education</div>
+  <div class="filter-btn" onclick="openPopup('lang')">Languages</div>
+  <div class="filter-btn" onclick="resetFilters()">Reset</div>
+</div>
 
-  <!-- ACTIONS -->
-  <div class="actions">
-    <button onclick="dislike()">❌</button>
-    <button onclick="saveJob()">💾</button>
-    <button onclick="applyJob()">🚀</button>
-  </div>
+<!-- JOB CARD -->
+<div class="card" id="jobCard">Loading jobs...</div>
 
- <script>
- let jobs = [];
+<!-- POPUPS -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3 id="popupTitle"></h3>
+    <input id="popupInput" placeholder="Enter value..." />
+    <button onclick="saveFilter()">Apply</button>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+let jobs = [];
 let index = 0;
+let filters = {};
+let currentFilter = "";
 
-const card = document.getElementById("jobCard");
+const API = "https://job-backend-gori.onrender.com/jobs";
 
-async function fetchJobs() {
-  try {
-    const res = await fetch("https://job-backend-gori.onrender.com/jobs");
-    jobs = await res.json();
-
-    if (jobs.length > 0) {
-      renderJob();
-    } else {
-      card.innerHTML = "No jobs found";
-    }
-  } catch (err) {
-    console.error(err);
-    card.innerHTML = "Failed to load jobs";
-  }
+/* LOAD JOBS */
+async function loadJobs() {
+  const res = await fetch(API);
+  jobs = await res.json();
+  render();
 }
 
-function renderJob() {
+/* RENDER */
+function render() {
   if (!jobs.length) return;
 
   const job = jobs[index];
 
-  card.classList.remove("left", "right");
-
-  card.innerHTML = `
+  document.getElementById("jobCard").innerHTML = `
     <h2>${job.title}</h2>
-    <p>🏢 ${job.company}</p>
-    <p>📍 ${job.location}</p>
-    <p>💼 ${job.work_mode || ''} • ${job.job_type || ''}</p>
-
-    <p>${job.job_description || ''}</p>
-
-    <div class="tags">
-      <span class="tag">Fresher</span>
-      <span class="tag">AI Copilot</span>
-    </div>
+    <p>${job.company}</p>
+    <p>${job.location}</p>
+    <p>${job.work_mode} | ${job.job_type}</p>
+    <p>${job.job_description}</p>
   `;
 }
 
-function nextJob(direction) {
-  card.classList.add(direction);
-
-  setTimeout(() => {
-    index++;
-    if (index >= jobs.length) index = 0;
-    renderJob();
-  }, 300);
+/* NEXT JOB */
+function nextJob() {
+  index++;
+  if (index >= jobs.length) index = 0;
+  render();
 }
 
-function dislike() {
-  nextJob("left");
+/* FILTER SYSTEM */
+function applyFilters() {
+  const keyword = document.getElementById("search").value;
+  const location = document.getElementById("location").value;
+
+  let url = `${API}/filter?`;
+
+  if (keyword) url += `keyword=${keyword}&`;
+  if (location) url += `location=${location}&`;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      jobs = data;
+      index = 0;
+      render();
+    });
 }
 
-function saveJob() {
-  alert("Saved!");
+/* POPUP */
+function openPopup(type) {
+  currentFilter = type;
+  document.getElementById("popup").style.display = "block";
+  document.getElementById("popupTitle").innerText = "Set " + type;
 }
 
-function applyJob() {
-  window.open(jobs[index].apply_link || "#", "_blank");
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
 }
 
-/* Swipe */
-let startX = 0;
+function saveFilter() {
+  const value = document.getElementById("popupInput").value;
+  filters[currentFilter] = value;
+  closePopup();
+}
 
-card.addEventListener("mousedown", (e) => {
-  startX = e.clientX;
-});
+/* RESET */
+function resetFilters() {
+  filters = {};
+  loadJobs();
+}
 
-card.addEventListener("mouseup", (e) => {
-  let diff = e.clientX - startX;
+/* INIT */
+loadJobs();
+</script>
 
-  if (diff > 100) {
-    saveJob();
-    nextJob("right");
-  } else if (diff < -100) {
-    dislike();
-  }
-});
-
-fetchJobs();
- </script>
 </body>
 </html>
