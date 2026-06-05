@@ -1,1118 +1,1281 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Title -->
+
 <title>Off Campus Jobs and Internships for Freshers</title>
+
+
+
+<!-- Meta Description -->
 
 <meta name="description" content="Find latest off campus jobs, internships, and fresher opportunities in India. Build ATS-friendly resumes and prepare for interviews. Apply directly on company career pages.">
 
+
+
+<!-- Keywords -->
+
 <meta name="keywords" content="off campus jobs, internships for freshers, jobs for freshers, resume builder, interview preparation, fresher jobs in India, entry level jobs">
+
+
+
+<!-- Author -->
 
 <meta name="author" content="Off Camp">
 
+
+
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+
+<!-- Robots -->
 
 <meta name="robots" content="index, follow">
 
+
+
+<!-- Canonical URL -->
+
 <link rel="canonical" href="https://offcamp.online/">
 
+
+
+<!-- Open Graph (for sharing) -->
+
 <meta property="og:title" content="Off Campus Jobs for Freshers | Off Camp">
+
 <meta property="og:description" content="Find latest off campus jobs, internships, and fresher hiring updates across India.">
+
 <meta property="og:image" content="https://offcamp.online/logo.png">
+
 <meta property="og:url" content="https://offcamp.online/">
+
 <meta property="og:type" content="website">
+
 <meta name="application-name" content="Off Camp">
+
 <meta name="apple-mobile-web-app-title" content="Off Camp">
 
+
+
 <link rel="icon" href="/logo.png" type="image/png">
+
 <link rel="shortcut icon" href="/logo.png">
+
 <link rel="apple-touch-icon" href="/logo.png">
 
+    
+
+    
+
 <style>
-/* ==========================================================================
-   GLOBAL VARIABLES & MERGED STYLES
-   ========================================================================== */
-:root {
-    --bg-dark-prime: #0B1220;    
-    --bg-dark-secondary: #162033;
-    --bg-dark-card: #1F2937;     
-    --accent-blue: #2563EB;      
-    --accent-purple: #A855F7;    
-    --text-white: #F9FAFB;       
-    --text-gray: #9CA3AF;        
-    --text-slate: #CBD5E1;       
-    --border-color: #263244;     
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-}
 
-html {
-    scroll-behavior: smooth;
-}
 
 body {
-    background-color: var(--bg-dark-prime);
-    color: var(--text-white);
-    overflow-x: hidden;
-    padding-bottom: 90px;
-}
 
-/* ==========================================================================
-   DRAWER LAYOUT BASE
-   ========================================================================== */
-.drawer-layout {
-    display: flex;
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-}
+    margin: 0;
 
-.main-screen {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-}
+    font-family: 'Poppins', sans-serif;
 
-.root-view {
-    padding: 16px;
-    max-width: 650px; 
-    margin: 0 auto;
-    width: 100%;
-}
+    background: radial-gradient(circle at top, #1a0933, #05010a);
 
-/* SEO content footer text styling */
-.seo-text-container {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 20px 16px;
-    color: #cfcfe8;
-    line-height: 1.7;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-.seo-text-container h2 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    color: var(--text-white);
-}
-
-/* ==========================================================================
-   APP HEADER BAR & NAVIGATION
-   ========================================================================== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-left img {
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-}
-
-.nav-left a {
     color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
+
+    padding-bottom: 70px; /* ADD THIS */
+
 }
 
-#hamburger {
-    font-size: 24px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-    padding: 4px 8px;
+    html {
+
+    scroll-behavior: smooth;
+
 }
 
-/* ==========================================================================
-   APP DASHBOARD HEADER CONTENT
-   ========================================================================== */
-.top-bar-header {
-    background: linear-gradient(180deg, #111827 0%, var(--bg-dark-prime) 100%);
-    padding: 14px 0;
-}
 
-.header-profile-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px;
-}
 
-.welcome-text-group h1 {
-    font-size: 24px;
-    font-weight: 700;
-}
+/* Navigation */
 
-.welcome-text-group p {
-    font-size: 13px;
-    color: var(--text-gray);
-    margin-top: 3px;
-}
 
-/* SEARCH BAR CARD */
-.search-card {
-    background-color: var(--bg-dark-card);
-    border: 1px solid #334155;
-    border-radius: 20px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    padding: 0 14px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
-.search-icon-span {
-    font-size: 18px;
-    color: var(--text-gray);
-    margin-right: 10px;
-}
 
-.search-card input {
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 100%;
-    color: var(--text-white);
-    font-size: 14px;
-}
 
-/* ==========================================================================
-   HORIZONTAL SCROLL ELEMENT BASES
-   ========================================================================== */
-.horizontal-scroll-tabs, .horizontal-scroll-chips, .horizontal-scroll-cards {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none;
-    padding-bottom: 8px;
-}
+/* Hero Section */
 
-.horizontal-scroll-tabs::-webkit-scrollbar, 
-.horizontal-scroll-chips::-webkit-scrollbar, 
-.horizontal-scroll-cards::-webkit-scrollbar {
-    display: none;
-}
+.hero {
 
-/* Tabs */
-.horizontal-scroll-tabs {
-    margin-top: 18px;
-    gap: 10px;
-}
-
-.tab-card {
-    background-color: var(--bg-dark-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    padding: 11px 18px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 13px;
-    color: var(--text-slate);
-}
-
-.tab-card.active-tab {
-    background-color: #FFFFFF;
-    color: var(--accent-blue);
-    border-color: #D6E4FF;
-}
-
-/* ==========================================================================
-   DYNAMIC RECYCLERVIEW MOCK CARD AREA
-   ========================================================================== */
-.recycler-view-replacement {
-    margin-top: 12px;
-}
-
-.jobs-list-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Beautiful dynamic item rows injected into layout container */
-.mock-job-row {
-    background-color: var(--bg-dark-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 14px;
-}
-
-.swipe-hint {
     text-align: center;
-    font-size: 12px;
-    color: #64748B;
-    font-weight: 700;
-    margin: 10px 0;
+
+    padding: 80px 20px 40px;
+
 }
 
-/* ==========================================================================
-   JOB PREFERENCE BANNER CARD
-   ========================================================================== */
-.preference-card {
-    background: linear-gradient(135deg, #E2ECFF 0%, #B9D1FF 100%);
-    border-radius: 22px;
-    height: 155px;
-    margin-top: 16px;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+
+
+.hero h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
 }
 
-.preference-content {
-    width: 60%;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 16px;
+
+
+.hero p {
+
+    font-size: 18px;
+
+    color: #cfcfe8;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.6;
+
 }
 
-.preference-content h2 {
-    color: #111827;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.1;
+
+
+/* App Image */
+
+.app-image {
+
+    margin-top: 40px;
+
 }
 
-.progress-bar-container {
-    width: 150px;
-    height: 8px;
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    margin-top: 10px;
-    overflow: hidden;
+
+
+.app-image img {
+
+    width: 260px;
+
+    max-width: 90%;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+    transition: 0.3s ease;
+
 }
 
-.progress-bar-fill {
-    height: 100%;
-    background-color: var(--accent-purple);
+
+
+.app-image img:hover {
+
+    transform: translateY(-10px) scale(1.03);
+
 }
 
-#profileProgressText {
-    font-size: 12px;
-    color: #4B5563;
-    font-weight: 700;
-    margin-top: 7px;
-}
 
-.btn-primary {
-    background-color: var(--accent-blue);
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    height: 36px;
-    width: fit-content;
-    padding: 0 14px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 10px;
-    cursor: pointer;
-}
 
-.preference-img {
-    width: 40%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-}
+.download-btn {
 
-/* ==========================================================================
-   CHIP SELECTORS
-   ========================================================================== */
-.section-header {
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
+    display: inline-block;
 
-.section-header h2 {
-    font-size: 20px;
-    font-weight: 700;
-}
+    margin-top: 30px;
 
-.horizontal-scroll-chips {
-    gap: 12px;
-}
+    padding: 16px 30px;
 
-.chip {
-    background-color: var(--bg-dark-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 12px 16px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-white);
-    cursor: pointer;
-}
+    background: linear-gradient(135deg, #7b5cff, #a855f7);
 
-/* ==========================================================================
-   CAREER TOOLS SQUARE CARDS
-   ========================================================================== */
-.horizontal-scroll-cards {
-    gap: 14px;
-    padding-bottom: 12px;
-}
-
-.tool-square-card {
-    background-color: #182235;
-    min-width: 280px;
-    height: 210px;
-    border-radius: 26px;
-    padding: 16px;
-    position: relative;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-}
-
-.tool-square-card.brown-theme {
-    background-color: #2A1F12;
-}
-
-.pill-badge {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 10px;
-    border-radius: 14px;
-    width: fit-content;
-    color: #FFFFFF;
-}
-
-.pill-gold { background: linear-gradient(90deg, #F59E0B, #D97706); }
-.pill-purple { background-color: var(--accent-purple); }
-.pill-orange { background-color: #92400E; color: #F59E0B;}
-.pill-light-blue { background-color: #1D4ED8; }
-
-.tool-square-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 12px;
-    max-width: 160px;
-}
-
-.tool-square-card p {
-    font-size: 12px;
-    color: var(--text-slate);
-    margin-top: 6px;
-    max-width: 160px;
-    white-space: normal;
-}
-
-.btn-primary-sm, .btn-pill-blue, .btn-warning-sm, .btn-dark-sm {
-    border: none;
-    border-radius: 8px;
-    height: 34px;
-    padding: 0 14px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: auto; 
-    width: fit-content;
-    cursor: pointer;
-}
-
-.btn-primary-sm { background-color: var(--accent-blue); color: white; }
-.btn-pill-blue { background-color: #1D4ED8; color: white; border-radius: 16px; height: 32px;}
-.btn-warning-sm { background-color: #F59E0B; color: white; height: 38px;}
-.btn-dark-sm { background-color: #111827; color: white; height: 38px;}
-
-.dual-buttons {
-    display: flex;
-    gap: 6px;
-    margin-top: auto;
-}
-
-.tool-circle-icon {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, rgba(0,0,0,0) 70%);
-    font-size: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.tool-side-img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* ==========================================================================
-   APP NATIVE SLIDE DRAW COMPONENT
-   ========================================================================== */
-.side-drawer {
-    position: fixed;
-    top: 0;
-    left: -310px; 
-    width: 300px;
-    height: 100%;
-    background-color: var(--bg-dark-prime);
-    z-index: 10000;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--border-color);
-    transition: left 0.3s ease-out;
-}
-
-.side-drawer.open {
-    left: 0;
-}
-
-/* Drawer overlay blocker */
-.drawer-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(4px);
-    z-index: 9999;
-}
-
-.drawer-header-card {
-    background-color: #0F172A;
-    border-radius: 26px;
-    height: 150px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.drawer-header-top {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.drawer-logo {
-    width: 42px;
-    height: 42px;
-    background: radial-gradient(circle, rgba(37,99,235,0.3) 0%, rgba(0,0,0,0) 70%);
-    padding: 7px;
-}
-
-.app-name {
-    font-size: 17px;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.close-btn {
-    position: absolute;
-    right: 0;
-    background: transparent;
-    border: none;
-    color: #FFFFFF;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.drawer-user-section {
-    display: flex;
-    align-items: center;
-}
-
-.user-initial {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background-color: var(--accent-purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 15px;
-}
-
-.user-info {
-    margin-left: 12px;
-}
-
-.user-info h4 { font-size: 14px; font-weight: 700; }
-.user-info p { font-size: 11px; color: var(--text-slate); }
-
-.drawer-scroll-menu {
-    flex: 1;
-    overflow-y: auto;
-    margin-top: 14px;
-    scrollbar-width: none;
-}
-.drawer-scroll-menu::-webkit-scrollbar { display: none; }
-
-.menu-card {
-    background-color: #111827;
-    border: 1px solid var(--border-color);
-    border-radius: 18px;
-    height: 64px;
-    margin-bottom: 9px;
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.menu-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.03);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 19px;
-}
-
-.menu-text { margin-left: 12px; flex: 1; }
-.menu-text h3 { font-size: 14px; font-weight: 700; }
-.menu-text p { font-size: 11px; color: var(--text-gray); }
-
-.badge { font-size: 10px; font-weight: 700; padding: 4px 9px; border-radius: 12px; }
-.badge-blue { background-color: var(--accent-blue); color: white; }
-
-.refer-earn-card {
-    background-color: #0F172A;
-    border-radius: 20px;
-    padding: 14px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-}
-
-.refer-icon { font-size: 26px; margin-right: 12px; }
-.refer-text h3 { font-size: 16px; font-weight: 700; }
-.refer-text p { font-size: 11px; color: var(--text-slate); }
-
-.btn-pill {
-    background-color: var(--accent-blue);
-    color: white; border: none; border-radius: 16px;
-    height: 32px; padding: 0 14px; font-size: 12px; font-weight: 700; cursor: pointer;
-}
-
-.premium-upgrade-card {
-    background-color: #0F172A;
-    border-radius: 22px;
-    padding: 14px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-}
-
-.upgrade-text { font-size: 13px; flex: 1; }
-.btn-premium {
-    background: linear-gradient(90deg, #A855F7, #7A22D8);
-    color: white; border: none; border-radius: 17px;
-    height: 34px; padding: 0 15px; font-size: 12px; font-weight: 700; cursor: pointer;
-}
-
-.section-title { font-size: 12px; font-weight: 700; color: var(--text-gray); padding: 8px 6px; }
-.support-card { background-color: #111827; border: 1px solid var(--border-color); border-radius: 20px; padding: 14px; display: flex; align-items: center; }
-
-/* ==========================================================================
-   SYSTEM INCLUDED BOTTOM NAVIGATION BAR
-   ========================================================================== */
-.bottom-navigation-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 76px;
-    background-color: #0F172A;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 9998;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    color: var(--text-gray);
-    text-decoration: none;
-    font-size: 11px;
-}
-
-.nav-item-icon {
-    font-size: 20px;
-    margin-bottom: 2px;
-}
-
-.nav-item.active {
-    color: var(--accent-purple);
-}
-
-/* ==========================================================================
-   TOPPERS CONTROLS & UTILS
-   ========================================================================== */
-#installBar {
-    position: fixed;
-    bottom: 76px; /* Shifted above bottom-navigation */
-    left: 0;
-    width: 100%;
-    background: #7b5cff;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    font-weight: 600;
-    z-index: 9997;
-    font-size: 15px;
-    flex-wrap: wrap;
-}
 
-#installBar a {
-    background: white;
-    color: black;
-    padding: 6px 14px;
-    border-radius: 8px;
+    font-size: 18px;
+
     text-decoration: none;
-    font-weight: 700;
-    white-space: nowrap;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
 }
 
-.glitter {
-    background: linear-gradient(90deg, white 0%, #ffe066 40%, white 80%);
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shimmer 2.5s linear infinite;
+
+
+.download-btn:hover {
+
+    transform: translateY(-3px);
+
 }
 
-@keyframes shimmer { to { background-position: 200% center; } }
+
+
+/* Features Section */
+
+.section {
+
+    padding: 60px 20px 80px;
+
+}
+
+
+
+.section h3 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.features {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+
+.card {
+
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    transition: 0.3s;
+
+}
+
+
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.card h4 {
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.card p {
+
+    color: #cfcfe8;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* Contact Section */
+
+#contact {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+}
+
+
 
 footer {
+
     text-align: center;
-    padding: 20px;
+
+    padding: 18px;
+
     font-size: 14px;
-    color: #64748B;
-    background-color: #05010a;
+
+    color: #aaa;
+
 }
+
+
+
+@media (max-width: 600px) {
+
+    .hero h2 {
+
+        font-size: 30px;
+
+    }
+
+}
+
+
+
+/* NAVBAR */
+
+
+
+nav {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+padding: 16px 24px;
+
+background: rgba(0,0,0,0.35);
+
+backdrop-filter: blur(10px);
+
+position: sticky;
+
+top: 0;
+
+z-index: 1000;
+
+}
+
+
+
+/* LEFT SIDE */
+
+
+
+.nav-left {
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+font-size: 20px;
+
+font-weight: 600;
+
+}
+
+
+
+.nav-left img {
+
+height: 36px;
+
+width: 36px;
+
+border-radius: 8px;
+
+}
+
+
+
+.nav-left a {
+
+color: white;
+
+text-decoration: none;
+
+}
+
+
+
+/* LINKS */
+
+
+
+.nav-links {
+
+display: flex;
+
+align-items: center;
+
+gap: 22px;
+
+}
+
+
+
+.nav-links a {
+
+color: white;
+
+text-decoration: none;
+
+font-weight: 500;
+
+}
+
+
+
+/* APP BUTTON */
+
+
+
+.app-btn {
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+padding: 10px 16px;
+
+border: none;
+
+border-radius: 10px;
+
+background: linear-gradient(135deg, #7b5cff, #a855f7);
+
+color: white;
+
+font-weight: 600;
+
+cursor: pointer;
+
+}
+
+
+
+.app-btn img {
+
+width: 18px;
+
+height: 18px;
+
+}
+
+
+
+/* HAMBURGER */
+
+
+
+#hamburger {
+
+display: none;
+
+font-size: 26px;
+
+cursor: pointer;
+
+}
+
+
+
+/* MOBILE */
+
+
+
+@media (max-width: 768px) {
+
+
+
+#hamburger {
+
+display: block;
+
+}
+
+
+
+.nav-links {
+
+position: absolute;
+
+top: 70px;
+
+left: 0;
+
+width: 100%;
+
+background: rgba(0,0,0,0.96);
+
+flex-direction: column;
+
+align-items: center;
+
+gap: 16px;
+
+padding: 20px 0;
+
+
+
+display: none;
+
+}
+
+
+
+.nav-links.active {
+
+display: flex;
+
+}
+
+
+
+.nav-links a {
+
+font-size: 16px;
+
+}
+
+
+
+.app-btn {
+
+width: 90%;
+
+justify-content: center;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
 </style>
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
+
 {
+
   "@context": "https://schema.org",
+
   "@type": "Organization",
+
   "name": "Off Camp",
+
   "url": "https://offcamp.online",
+
   "logo": "https://offcamp.online/logo.png",
+
   "sameAs": [
+
     "https://www.instagram.com/sameeroffcamp/",
+
     "https://x.com/outsidelooptech"
+
   ]
+
 }
+
+
+
+        
+
 </script>
+
 </head>
+
+
 
 <body>
 
-    <div id="draw" class="drawer-layout">
 
-        <div id="drawerOverlay" class="drawer-overlay"></div>
 
-        <aside id="premiumDrawer" class="side-drawer">
-            <div class="drawer-header-card">
-                <div class="drawer-header-top">
-                    <img id="drawerLogo" src="logo.png" alt="Logo" class="drawer-logo">
-                    <span id="drawerAppName" class="app-name">Off Camp</span>
-                    <button id="drawerClose" class="close-btn">&times;</button>
-                </div>
-                
-                <div class="drawer-user-section">
-                    <div id="drawerUserInitial" class="user-initial">OC</div>
-                    <div class="user-info">
-                        <h4>Hello, User</h4>
-                        <p>Explore Jobs</p>
-                    </div>
-                </div>
-            </div>
+<!-- Navigation -->
 
-            <div class="drawer-scroll-menu">
-                <nav>
-                    <div id="menuAiJobSearch" class="menu-card">
-                        <div class="menu-icon">🤖</div>
-                        <div class="menu-text">
-                            <h3>AI Job Search</h3>
-                            <p>Swipe jobs matched to you</p>
-                        </div>
-                        <span class="badge badge-blue">AI</span>
-                    </div>
+<nav>
 
-                    <div id="menuPersonalizedJobs" class="menu-card">
-                        <div class="menu-icon">🎯</div>
-                        <div class="menu-text">
-                            <h3>Personalized Jobs</h3>
-                            <p>Jobs based on your profile</p>
-                        </div>
-                        <span class="badge badge-blue">Smart</span>
-                    </div>
 
-                    <div id="menuJobReferrals" class="menu-card">
-                        <div class="menu-icon">🔗</div>
-                        <div class="menu-text">
-                            <h3>Job Referrals</h3>
-                            <p>Request and track referrals</p>
-                        </div>
-                        <span class="badge badge-blue">Pro</span>
-                    </div>
 
-                    <div id="menuSavedJobs" class="menu-card">
-                        <div class="menu-icon">🔖</div>
-                        <div class="menu-text">
-                            <h3>Saved Jobs</h3>
-                            <p>Your Bookmarked Jobs</p>
-                        </div>
-                        <span class="badge badge-blue">Pro</span>
-                    </div>
+<div class="nav-left">
 
-                    <div id="menuCommunity" class="menu-card">
-                        <div class="menu-icon">🤝</div>
-                        <div class="menu-text">
-                            <h3>Community Corner</h3>
-                            <p>Network with students</p>
-                        </div>
-                        <span class="badge badge-blue">Social</span>
-                    </div>
+    <img src="logo.png" alt="Offcamp Logo">
 
-                    <div id="menuMockInterviews" class="menu-card">
-                        <div class="menu-icon">🎤</div>
-                        <div class="menu-text">
-                            <h3>Mock Interviews</h3>
-                            <p>Practice HR & technical rounds</p>
-                        </div>
-                        <span class="badge badge-blue">AI</span>
-                    </div>
+    <a href="https://offcamp.online/">Off Camp</a>
 
-                    <div id="referEarnCard" class="refer-earn-card">
-                        <div class="refer-icon">🎁</div>
-                        <div class="refer-text">
-                            <h3>Refer & Earn</h3>
-                            <p>Invite friends & rewards</p>
-                        </div>
-                        <button class="btn-pill modalTrigger">Invite</button>
-                    </div>
+</div>
 
-                    <div id="premiumCard" class="premium-upgrade-card">
-                        <p class="upgrade-text">✨ <strong>Go Premium</strong><br>Unlock dynamic features</p>
-                        <button class="btn-premium modalTrigger">Upgrade</button>
-                    </div>
 
-                    <div class="section-title">Help & Support</div>
-                    <div id="helpSupportCard" class="support-card">
-                        <div class="menu-icon">🛠️</div>
-                        <div class="menu-text">
-                            <h3>Raise a Complaint</h3>
-                            <p>Report bugs or app issues</p>
-                        </div>
-                        <button class="btn-pill modalTrigger">Contact</button>
-                    </div>
-                </nav>
-            </div>
-        </aside>
 
-        <main class="main-screen">
-            
-            <nav>
-                <div class="nav-left">
-                    <img src="logo.png" alt="Offcamp Logo">
-                    <a href="https://offcamp.online/">Off Camp</a>
-                </div>
-                <button id="hamburger">☰</button>
-            </nav>
+<!-- HAMBURGER -->
 
-            <div id="rootview" class="root-view">
-                
-                <header class="top-bar-header">
-                    <div class="header-profile-row">
-                        <div class="welcome-text-group">
-                            <h1>Welcome Back 👋</h1>
-                            <p>Your next opportunity awaits</p>
-                        </div>
-                    </div>
+<div id="hamburger">☰</div>
 
-                    <div class="search-card">
-                        <span class="search-icon-span">🔍</span>
-                        <input type="text" id="searchJobs" placeholder="Search jobs, companies, skills">
-                    </div>
-                </header>
 
-                <div class="horizontal-scroll-tabs">
-                    <div id="cardTabRecommended" class="tab-card active-tab">
-                        <span id="tabRecommended">Recommended Jobs</span>
-                    </div>
-                    <div id="cardTabLatest" class="tab-card">
-                        <span id="tabLatest">Latest Jobs</span>
-                    </div>
-                    <div id="cardTabRemote" class="tab-card">
-                        <span id="tabRemote">Remote Jobs</span>
-                    </div>
-                </div>
 
-                <div class="recycler-view-replacement">
-                    <div id="homeJobsRecycler" class="jobs-list-grid">
-                        <div class="mock-job-row">
-                            <h4 style="font-size: 16px; margin-bottom: 4px;">Software Engineer Intern</h4>
-                            <p style="font-size: 12px; color: var(--text-gray);">Google India &bull; Bengaluru</p>
-                        </div>
-                        <div class="mock-job-row">
-                            <h4 style="font-size: 16px; margin-bottom: 4px;">Associate Systems Engineer</h4>
-                            <p style="font-size: 12px; color: var(--text-gray);">TATA Consultancy Services &bull; Remote</p>
-                        </div>
-                    </div>
-                </div>
+<!-- LINKS -->
 
-                <div class="swipe-hint">&larr; Swipe to explore &rarr;</div>
+<div class="nav-links" id="navLinks">
 
-                <div id="jobPreferenceCard" class="preference-card">
-                    <div class="preference-content">
-                        <h2 id="preferenceTitle">Jobs fit to<br>your preference</h2>
-                        <div class="progress-bar-container">
-                            <div id="profileProgress" class="progress-bar-fill" style="width: 40%;"></div>
-                        </div>
-                        <p id="profileProgressText">Personalized jobs for you</p>
-                        <button id="viewJobsBtn" class="btn-primary modalTrigger">Explore jobs &gt;&gt;</button>
-                    </div>
-                    <img id="preferencePersonImage" src="Index1.jpeg" alt="Preference View" class="preference-img">
-                </div>
 
-                <div class="section-header">
-                    <h2>Explore Categories</h2>
-                </div>
-                <div class="horizontal-scroll-chips">
-                    <span id="catOffCampus" class="chip">Off Campus</span>
-                    <span id="catRemoteJobs" class="chip">Internships</span>
-                    <span id="catInternships" class="chip">Remote Jobs</span>
-                    <span id="catRemoteInternships" class="chip">WFH Internships</span>
-                    <span id="catBulkJobs" class="chip">Mass Jobs</span>
-                </div>
 
-                <div id="head22" class="section-header">
-                    <h2>Career Tools</h2>
-                </div>
-                
-                <div class="horizontal-scroll-cards">
-                    <div id="aiJobMatchCard" class="tool-square-card">
-                        <span id="aiMatchBadge" class="pill-badge pill-gold">AI Job Match</span>
-                        <h3>AI Job Match</h3>
-                        <p>Swipe jobs tailored to your profile</p>
-                        <button class="btn-primary-sm modalTrigger">Try Now</button>
-                        <div class="tool-circle-icon">🤖</div>
-                    </div>
+<a href="/off-campus-jobs.html">Jobs</a>
 
-                    <div id="topCardView2" class="tool-square-card">
-                        <span id="autoApplyBadge" class="pill-badge pill-purple">AI Powered</span>
-                        <h3>Smart Apply</h3>
-                        <p>Apply faster with AI-powered autofill</p>
-                        <button class="btn-primary-sm modalTrigger">Get Started</button>
-                        <div class="tool-circle-icon">🤖</div>
-                    </div>
+<a href="/remote-internships.html">Internships</a>
 
-                    <div id="mockhigh" class="tool-square-card">
-                        <span id="mockBadge" class="pill-badge pill-purple">AI Practice</span>
-                        <h3>AI Mock Interview</h3>
-                        <p>Practice HR, technical and communication rounds.</p>
-                        <button class="btn-pill-blue modalTrigger">Begin Practice</button>
-                        <div class="tool-circle-icon">🎤</div>
-                    </div>
+<a href="/resume-builder-for-freshers.html">Free Resume Builder</a>
 
-                    <div id="comm_card2" class="tool-square-card brown-theme">
-                        <span id="resumeBadge" class="pill-badge pill-orange">ATS Friendly</span>
-                        <h3>Resume Builder</h3>
-                        <p>Build recruiter-friendly resumes instantly</p>
-                        <button class="btn-warning-sm modalTrigger">Create Resume</button>
-                        <div class="tool-circle-icon">📝</div>
-                    </div>
-                </div>
+<a href="/interview-preparation-questions.html">AI Interview Prep</a>
 
-            </div> <section class="seo-text-container">
-                <h2>Latest Off Campus Jobs and Internships for Freshers</h2>
-                <p>Off Camp helps students and graduates find verified off campus jobs, internships, and entry-level opportunities across India. Search jobs from company career pages and apply directly without fake listings.</p>
 
-                <h2>Resume Builder and Interview Preparation</h2>
-                <p>Create ATS-friendly resumes using our resume builder and prepare for interviews with real interview questions and mock interview practice.</p>
 
-                <h2>Jobs for Freshers Across India</h2>
-                <p>Find fresher jobs in software development, customer support, marketing, finance, and operations. New job opportunities are updated daily.</p>
-                
-                <p style="margin-top:20px; text-align:center;">
-                    Email Support: outsidelooptech@gmail.com
-                </p>
-            </section>
+<button id="openModal" class="app-btn">
 
-            <div id="installBar">
-                <span class="glitter">50+ Companies Hiring — Apply Now</span>
-                <a href="https://play.google.com/store/apps/details?id=com.first.offcamp" target="_blank">Install App</a>
-            </div>
+<img src="scan.svg">
 
-            <footer>
-                © 2026 Off Camp. All rights reserved.
-            </footer>
+<span>Get the App</span>
 
-            <nav id="bottomNavInclude" class="bottom-navigation-bar">
-                <a href="#" class="nav-item active">
-                    <div class="nav-item-icon">🏠</div>
-                    <span>Home</span>
-                </a>
-                <a href="/off-campus-jobs.html" class="nav-item">
-                    <div class="nav-item-icon">📋</div>
-                    <span>Jobs</span>
-                </a>
-                <a href="/remote-internships.html" class="nav-item">
-                    <div class="nav-item-icon">💼</div>
-                    <span>Internships</span>
-                </a>
-                <a href="/resume-builder-for-freshers.html" class="nav-item">
-                    <div class="nav-item-icon">📄</div>
-                    <span>Words</span>
-                </a>
-                <a href="/interview-preparation-questions.html" class="nav-item">
-                    <div class="nav-item-icon">🧠</div>
-                    <span>Digest</span>
-                </a>
-            </nav>
+</button>
 
-        </main>
-    </div>
 
-    <div id="appModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);justify-content:center;align-items:center;z-index:100000;">
-        <div style="background:#ffffff;color:#111;border-radius:24px;max-width:900px;width:95%;display:flex;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.6);">
-            
-            <div style="flex:1;background:#f3e9dd;display:flex;justify-content:center;align-items:center;padding:30px;" class="modal-left-banner">
-                <img src="Index1.jpeg" alt="App Screenshot" style="width:220px;max-width:100%;border-radius:20px;box-shadow:0 10px 20px rgba(0,0,0,0.2);">
-            </div>
 
-            <div style="flex:1.2;padding:40px;">
-                <button id="closeModal" style="position:absolute;top:15px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;">&times;</button>
-                <div style="display:inline-block;background:#f1f1f1;padding:6px 14px;border-radius:20px;font-size:14px;margin-bottom:18px;font-weight:600;">
-                    50+ Companies Jobs at one place
-                </div>
-                <h2 style="font-size:30px;margin:0 0 15px 0;line-height:1.2;color:#111;">
-                    Download the Off Camp : Job Search App
-                </h2>
-                <p style="color:#555;font-size:15px;margin-bottom:25px;">
-                    Get instant access to off-campus jobs, internships, and fresher hiring updates directly on your phone.
-                </p>
-                <div style="display:flex;gap:20px;align-items:center;background:#f7f7f7;padding:20px;border-radius:18px;flex-wrap:wrap;">
-                    <div style="text-align:center;">
-                        <img src="QR.png" alt="QR Code" style="width:110px;height:110px;" onerror="this.style.display='none'">
-                        <div style="font-size:11px;color:#666;margin-top:6px;font-weight:700;">SCAN TO DOWNLOAD</div>
-                    </div>
-                    <div>
-                        <a href="https://play.google.com/store/apps/details?id=com.first.offcamp" target="_blank" style="display:inline-block;">
-                            <img src="googleplay.webp" alt="Get it on Google Play" style="height:50px;">
-                        </a>
-                        <div style="font-size:12px;color:#666;margin-top:4px;">Available on Android Mobile Store</div>
-                    </div>
-                </div>
-            </div>
+</div>
 
-        </div>
-    </div>
+
+
+</nav>
+
+<!-- Hero Section -->
+
+<div class="hero">
+
+   
+
+<h1>Find Off Campus Jobs and Internships for Freshers in India</h1>
+
+    <p>
+
+Search verified off campus jobs, internships, and fresher opportunities across India. 
+
+Build professional resumes and prepare for interviews with smart tools.
+
+</p>
+
+<p>
+
+Get the latest Off-Campus Jobs, Internships, and Hiring Updates directly on your phone. Stay ahead with verified opportunities.
+
+</p>
+
+
+
+<!-- IMPORTANT: Replace app.png with your screenshot file name -->
+
+<div class="app-image" style="display:flex;justify-content:center;align-items:center;">
+
+<img src="Index1.jpeg" alt="Off Camp app showing off campus jobs and internships for freshers" style="width:280px;max-width:90%;border-radius:28px;box-shadow:0 25px 60px rgba(0,0,0,0.7);border:6px solid rgba(255,255,255,0.08);background:#000;">
+
+</div>
+
+
+
+<a class="download-btn" href="https://play.google.com/store/apps/details?id=com.first.offcamp" target="_blank">
+
+Download App
+
+</a>
+
+</div>
+
+
+
+<!-- Features Section -->
+
+<div class="section">
+
+<h3>Everything You Need to Get Hired Faster</h3>
+
+
+
+<div class="features">
+
+
+
+<div class="card">
+
+<h4>Off-Campus Jobs & Internships</h4>
+
+<p>Discover verified fresher jobs and internships from 50+ companies for all degree backgrounds including BA, BCom, BSc, BBA, and BTech.</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h4>Direct Company Career Page Jobs</h4>
+
+<p>Apply directly on official company websites from 1000+ verified companies.</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h4>AI Mock Interviews with Instant Feedback</h4>
+
+<p>Practice real interview questions and get instant AI feedback to improve confidence and performance.</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h4>Free Resume Builder</h4>
+
+<p>Create professional resumes using ATS-optimized templates designed for freshers and students.</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h4>Smart Apply with AI</h4>
+
+<p>Match your resume with job descriptions and increase your chances of getting shortlisted faster.</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h4>Daily Job Alerts & Notifications</h4>
+
+<p>Get instant alerts for new jobs, internships, and off-campus drives directly on your phone.</p>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- Contact Section -->
+
+<div id="contact">
+
+<h3>Contact Us</h3>
+
+<p>Email: outsidelooptech@gmail.com</p>
+
+</div>
+
+
+
+<!-- Social Links Section -->
+
+<div style="text-align:center;padding:30px 20px;border-top:1px solid rgba(255,255,255,0.1);">
+
+
+
+<h3>Follow Us</h3>
+
+
+
+<p style="margin-top:15px;">
+
+<a href="https://www.whatsapp.com/channel/0029Vb6MqgE5vKA1TDtMIE3o" target="_blank" style="margin:10px;color:#cfcfe8;text-decoration:none;font-weight:500;">WhatsApp Channel</a> |
+
+<a href="#" target="_blank" style="margin:10px;color:#cfcfe8;text-decoration:none;font-weight:500;">Facebook</a> |
+
+<a href="https://www.instagram.com/sameeroffcamp/" target="_blank" style="margin:10px;color:#cfcfe8;text-decoration:none;font-weight:500;">Instagram</a> |
+
+<a href="https://x.com/outsidelooptech" target="_blank" style="margin:10px;color:#cfcfe8;text-decoration:none;font-weight:500;">X (Twitter)</a>
+
+</p>
+
+
+
+</div>
+
+
+
+    <div style="max-width:1100px;margin:auto;padding:40px 20px;color:#cfcfe8;line-height:1.7;">
+
+
+
+<h2>Latest Off Campus Jobs and Internships for Freshers</h2>
+
+
+
+<p>
+
+Off Camp helps students and graduates find verified off campus jobs, internships, and entry-level opportunities across India. 
+
+Search jobs from company career pages and apply directly without fake listings.
+
+</p>
+
+
+
+<h2>Resume Builder and Interview Preparation</h2>
+
+
+
+<p>
+
+Create ATS-friendly resumes using our resume builder and prepare for interviews with real interview questions and mock interview practice.
+
+</p>
+
+
+
+<h2>Jobs for Freshers Across India</h2>
+
+
+
+<p>
+
+Find fresher jobs in software development, customer support, marketing, finance, and operations. 
+
+New job opportunities are updated daily.
+
+</p>
+
+
+
+</div>
+
+
+
+<div id="installBar">
+
+<span class="glitter">
+
+50+ Companies Hiring — Apply Now
+
+</span>
+
+
+
+<a href="https://play.google.com/store/apps/details?id=com.first.offcamp">
+
+
+
+Install App
+
+
+
+</a>
+
+
+
+</div>
+
+
+
+<style>
+
+
+
+#installBar {
+
+position: fixed;
+
+bottom: 0;
+
+left: 0;
+
+width: 100%;
+
+
+
+background: #7b5cff;
+
+color: white;
+
+
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+gap: 12px;
+
+
+
+padding: 14px 16px;
+
+
+
+font-weight: 600;
+
+z-index: 9999;
+
+
+
+font-size: 16px;
+
+
+
+flex-wrap: wrap;
+
+}
+
+
+
+/* BUTTON */
+
+
+
+#installBar a {
+
+background: white;
+
+color: black;
+
+
+
+padding: 8px 16px;
+
+border-radius: 8px;
+
+
+
+text-decoration: none;
+
+font-weight: 700;
+
+
+
+white-space: nowrap;   /* prevents "Install App" breaking */
+
+}
+
+
+
+/* MOBILE OPTIMIZATION */
+
+
+
+@media (max-width: 480px) {
+
+
+
+#installBar {
+
+font-size: 14px;
+
+gap: 10px;
+
+padding: 12px;
+
+}
+
+
+
+#installBar a {
+
+padding: 7px 14px;
+
+font-size: 14px;
+
+}
+
+
+
+}
+
+
+
+/* Glitter / Shimmer Effect */
+
+
+
+.glitter {
+
+background: linear-gradient(
+
+90deg,
+
+white 0%,
+
+#ffe066 40%,
+
+white 80%
+
+);
+
+
+
+background-size: 200% auto;
+
+
+
+color: transparent;
+
+
+
+-webkit-background-clip: text;
+
+background-clip: text;
+
+
+
+animation: shimmer 2.5s linear infinite;
+
+}
+
+
+
+@keyframes shimmer {
+
+to {
+
+background-position: 200% center;
+
+}
+
+}
+
+
+
+</style>
+
+
+
+<footer>
+
+© 2026 Off Camp. All rights reserved.
+
+</footer>
+
+
+
+
+
+
+
+<!-- App Download Modal -->
+
+<div id="appModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);justify-content:center;align-items:center;z-index:999;">
+
+
+
+<div style="background:#ffffff;color:#111;border-radius:24px;max-width:900px;width:95%;display:flex;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.6);">
+
+
+
+<!-- Left Side Phone Image -->
+
+<div style="flex:1;background:#f3e9dd;display:flex;justify-content:center;align-items:center;padding:30px;">
+
+<img src="Frame 3.png" alt="App Screenshot" style="width:260px;max-width:100%;border-radius:30px;">
+
+</div>
+
+
+
+<!-- Right Side Content -->
+
+<div style="flex:1.2;padding:40px;">
+
+
+
+<button id="closeModal" style="position:absolute;top:15px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;">×</button>
+
+
+
+<div style="display:inline-block;background:#f1f1f1;padding:6px 14px;border-radius:20px;font-size:14px;margin-bottom:18px;">
+
+50+ Companies Jobs at one place
+
+</div>
+
+
+
+<h2 style="font-size:34px;margin:0 0 15px 0;line-height:1.2;">
+
+Download the Off Camp : Job Search App
+
+</h2>
+
+
+
+<p style="color:#555;font-size:16px;margin-bottom:25px;">
+
+Get instant access to off-campus jobs, internships, and fresher hiring updates directly on your phone.
+
+</p>
+
+
+
+<div style="display:flex;gap:25px;align-items:center;background:#f7f7f7;padding:20px;border-radius:18px;">
+
+
+
+<!-- QR Code -->
+
+<div style="text-align:center;">
+
+<img src="QR.png" alt="QR Code" style="width:120px;height:120px;">
+
+<div style="font-size:12px;color:#666;margin-top:6px;">SCAN TO DOWNLOAD</div>
+
+</div>
+
+
+
+<!-- Google Play Button -->
+
+<div>
+
+<a href="https://play.google.com/store/apps/details?id=com.first.offcamp" target="_blank" style="display:inline-block;">
+
+<img src="googleplay.webp" alt="Get it on Google Play" style="height:55px;">
+
+</a>
+
+<div style="font-size:12px;color:#666;margin-top:8px;">Available on Android</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
 
 <script>
-// ==========================================================================
-// NAVIGATION SIDE DRAWER SLIDE MOTOR INTERACTION
-// ==========================================================================
-const hamburger = document.getElementById("hamburger");
-const drawerClose = document.getElementById("drawerClose");
-const premiumDrawer = document.getElementById("premiumDrawer");
-const drawerOverlay = document.getElementById("drawerOverlay");
 
-function openDrawer() {
-    premiumDrawer.classList.add("open");
-    drawerOverlay.style.display = "block";
-}
 
-function closeDrawer() {
-    premiumDrawer.classList.remove("open");
-    drawerOverlay.style.display = "none";
-}
 
-hamburger.addEventListener("click", openDrawer);
-drawerClose.addEventListener("click", closeDrawer);
-drawerOverlay.addEventListener("click", closeDrawer);
-
-// ==========================================================================
-// SYSTEM ACTION MODAL MANAGER RUNTIME
-// ==========================================================================
 const modal = document.getElementById('appModal');
-const closeModalBtn = document.getElementById('closeModal');
 
-function triggerModalShow(e) {
-    e.preventDefault();
+const openBtn = document.getElementById('openModal');
+
+const closeBtn = document.getElementById('closeModal');
+
+
+
+openBtn.onclick = function() {
+
     modal.style.display = 'flex';
+
 }
 
-// Automatically hooks modal activation to any component carrying the .modalTrigger class selector
-document.querySelectorAll('.modalTrigger').forEach(element => {
-    element.addEventListener('click', triggerModalShow);
-});
 
-closeModalBtn.onclick = function() {
+
+closeBtn.onclick = function() {
+
     modal.style.display = 'none';
+
 }
+
+
 
 window.onclick = function(event) {
+
     if (event.target == modal) {
+
         modal.style.display = 'none';
+
     }
+
 }
 
-// ==========================================================================
-// APP MOCKING CHIP TAB SELECTION TOGGLERS
-// ==========================================================================
-document.querySelectorAll('.tab-card').forEach(tab => {
-    tab.addEventListener('click', function() {
-        document.querySelectorAll('.tab-card').forEach(t => t.classList.remove('active-tab'));
-        this.classList.add('active-tab');
-    });
+
+
+const hamburger = document.getElementById("hamburger");
+
+const navLinks = document.getElementById("navLinks");
+
+
+
+hamburger.onclick = function () {
+
+
+
+navLinks.classList.toggle("active");
+
+
+
+if (navLinks.classList.contains("active")) {
+
+    hamburger.innerHTML = "✕";
+
+} else {
+
+    hamburger.innerHTML = "☰";
+
+}
+
+
+
+    
+
+
+
+};
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.onclick = function () {
+
+        navLinks.classList.remove("active");
+
+        hamburger.innerHTML = "☰";
+
+    };
+
 });
+
+
+
 </script>
 
+
+
 </body>
+
 </html>
